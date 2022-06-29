@@ -17,7 +17,7 @@ class TrailerCell: UICollectionViewCell {
         containerView.clipsToBounds = true
 
         titleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(14)
-        titleLabel.textColor = R.color.cinema400()
+        titleLabel.textColor = UIColor.loadColorFromBundle(name: "cinema400")
     }
 
     func setTrailer(trailer: Trailer?) {

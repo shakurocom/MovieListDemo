@@ -4,7 +4,7 @@
 
 import UIKit
 
-class ActorListViewController: UIViewController, BaseViewControllerProtocol {
+class ActorListViewController: UIViewController {
 
     struct Option {
         let actors: [Actor]
@@ -19,7 +19,6 @@ class ActorListViewController: UIViewController, BaseViewControllerProtocol {
 
     private weak var transition: UIViewControllerTransitioningDelegate?
     private var actorItems: [Actor] = []
-    private weak var appRouter: RoutingSupport?
 
     static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
         let viewController = R.unwrap({ R.storyboard.actors.actorListViewController() })
@@ -38,12 +37,12 @@ class ActorListViewController: UIViewController, BaseViewControllerProtocol {
 
         barTitle.text = NSLocalizedString("Cast", comment: "")
         barTitle.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
-        barTitle.textColor = R.color.cDark()
+        barTitle.textColor = UIColor.loadColorFromBundle(name: "cDark")
 
         let backIconConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .medium, scale: .medium)
         let backIconImage = UIImage(systemName: "arrow.left", withConfiguration: backIconConfig)
         backButton.setImage(backIconImage, for: .normal)
-        backButton.tintColor = R.color.accentColor()
+        backButton.tintColor = UIColor.loadColorFromBundle(name: "AccentColor")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -119,7 +118,7 @@ extension ActorListViewController: UIViewControllerTransitioningDelegate {
 private extension ActorListViewController {
 
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        appRouter?.appRouter.dismissViewController(self, animated: true)
+        dismiss(animated: true)
     }
 
 }

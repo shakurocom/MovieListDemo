@@ -164,7 +164,7 @@ private extension DetailsView {
         castCollectionView.clipsToBounds = false
         castCollectionView.showsVerticalScrollIndicator = false
         castCollectionView.showsHorizontalScrollIndicator = false
-        castCollectionView.backgroundColor = R.color.bg200()
+        castCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         castCollectionView.translatesAutoresizingMaskIntoConstraints = false
         castCollectionView.register(R.nib.actorCell)
 
@@ -192,7 +192,7 @@ private extension DetailsView {
         trailerCollectionView.clipsToBounds = false
         trailerCollectionView.showsVerticalScrollIndicator = false
         trailerCollectionView.showsHorizontalScrollIndicator = false
-        trailerCollectionView.backgroundColor = R.color.bg200()
+        trailerCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         trailerCollectionView.translatesAutoresizingMaskIntoConstraints = false
         trailerCollectionView.register(R.nib.trailerCell)
 
@@ -220,7 +220,7 @@ private extension DetailsView {
         photoCollectionView.clipsToBounds = false
         photoCollectionView.showsVerticalScrollIndicator = false
         photoCollectionView.showsHorizontalScrollIndicator = false
-        photoCollectionView.backgroundColor = R.color.bg200()
+        photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
         photoCollectionView.register(R.nib.photoCell)
 

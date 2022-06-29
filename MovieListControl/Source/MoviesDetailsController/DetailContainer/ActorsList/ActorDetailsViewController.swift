@@ -4,7 +4,7 @@
 
 import UIKit
 
-class ActorDetailsViewController: UIViewController, BaseViewControllerProtocol {
+class ActorDetailsViewController: UIViewController {
 
     struct Option {
         let actor: Actor
@@ -36,7 +36,6 @@ class ActorDetailsViewController: UIViewController, BaseViewControllerProtocol {
     private var photoCollectionView: UICollectionView!
 
     private var actor: Actor!
-    private weak var appRouter: RoutingSupport?
 
     static func instantiateViewController(_ coordinator: AppCoordinator, options: ActorDetailsViewController.Option) -> UIViewController {
         let viewController = R.unwrap({ R.storyboard.actors.actorDetailsViewController() })
@@ -149,7 +148,7 @@ extension ActorDetailsViewController: UIScrollViewDelegate {
 private extension ActorDetailsViewController {
 
     @IBAction func closeButtonPressed(_ sender: UIButton) {
-        appRouter?.appRouter.dismissViewController(self, animated: true)
+        dismiss(animated: true)
     }
 
     @IBAction private func showPhotosPressed() {
@@ -173,7 +172,7 @@ private extension ActorDetailsViewController {
         photoCollectionView.clipsToBounds = false
         photoCollectionView.showsVerticalScrollIndicator = false
         photoCollectionView.showsHorizontalScrollIndicator = false
-        photoCollectionView.backgroundColor = R.color.bg200()
+        photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "Bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
         photoCollectionView.register(R.nib.photoCell)
 

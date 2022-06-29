@@ -4,7 +4,7 @@
 
 import UIKit
 
-class MovieDetailsViewController: UIViewController, BaseViewControllerProtocol {
+class MovieDetailsViewController: UIViewController {
 
     private enum ContentMode {
         case showtimes
@@ -33,8 +33,6 @@ class MovieDetailsViewController: UIViewController, BaseViewControllerProtocol {
     @IBOutlet private var comingSoonHeight: NSLayoutConstraint!
 
     var unhighlightedCardViewModel: MovieItem!
-
-    private weak var appRouter: RoutingSupport?
 
     private var transition: CardTransition?
     private var contentMode: ContentMode = .showtimes
@@ -313,8 +311,8 @@ private extension MovieDetailsViewController {
         buttonContainer.layer.cornerRadius = 8
 
         let selectedTint = UIColor.white
-        let normalTint = R.color.cinemaText500()
-        let selectedBackground = R.color.blueButton()
+        let normalTint = UIColor.loadColorFromBundle(name: "cinemaText500")
+        let selectedBackground = UIColor.loadColorFromBundle(name: "BlueButton")
         let normalBackground = UIColor.white
 
         let buttonFont = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(16)
@@ -415,7 +413,7 @@ private extension MovieDetailsViewController {
     private func dissmiss() {
         movie = unhighlightedCardViewModel
         cardContentView.setupUIForMode(mode: fromCardContentViewMode)
-        appRouter?.appRouter.dismissViewController(self, animated: true)
+        dismiss(animated: true)
     }
 
 }

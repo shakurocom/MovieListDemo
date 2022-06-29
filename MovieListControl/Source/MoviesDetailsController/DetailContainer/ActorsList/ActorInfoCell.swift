@@ -12,9 +12,9 @@ class InfoCell: UITableViewCell {
         super.awakeFromNib()
 
         titleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(12)
-        titleLabel.textColor = R.color.cinema300()
+        titleLabel.textColor = UIColor.loadColorFromBundle(name: "cinema300")
         subtitleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(14)
-        subtitleLabel.textColor = R.color.cDark()
+        subtitleLabel.textColor = UIColor.loadColorFromBundle(name: "cDark")
     }
 
     func setInfo(info: Info) {

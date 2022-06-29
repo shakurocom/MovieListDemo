@@ -37,7 +37,7 @@ class ShowtimesView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        backgroundColor = R.color.bg200()
+        backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
 
         addCalendarCollectionView()
         addSheduleCollectionView()
@@ -56,7 +56,7 @@ class ShowtimesView: UIView {
         dateLabel.text = NSLocalizedString("Date", comment: "")
         dateLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
 
-        sheduleContainerView.backgroundColor = R.color.bg200()
+        sheduleContainerView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         calendarContainerView.clipsToBounds = true
     }
 
@@ -199,7 +199,7 @@ private extension ShowtimesView {
         sheduleCollectionView.clipsToBounds = false
         sheduleCollectionView.showsVerticalScrollIndicator = false
         sheduleCollectionView.showsHorizontalScrollIndicator = false
-        sheduleCollectionView.backgroundColor = R.color.bg200()
+        sheduleCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         sheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
         sheduleCollectionView.register(R.nib.sheduleCollectionViewCell)
 

@@ -2,10 +2,11 @@
 //  MoviesListViewController.swift
 //  ShakuroApp
 
+import Shakuro_CommonTypes
 import Foundation
 import UIKit
 
-class MoviesListViewController: UIViewController, BaseViewControllerProtocol {
+class MoviesListViewController: UIViewController {
 
     struct Option {
     }
@@ -19,14 +20,6 @@ class MoviesListViewController: UIViewController, BaseViewControllerProtocol {
 
     private var transition: CardTransition?
     private let movieItems: [MovieItem] = MovieList.generate().items
-
-    private weak var appRouter: RoutingSupport?
-
-    static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
-        let viewController = R.unwrap({ R.storyboard.movies.moviesListViewController() })
-        viewController.appRouter = coordinator
-        return viewController
-    }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent

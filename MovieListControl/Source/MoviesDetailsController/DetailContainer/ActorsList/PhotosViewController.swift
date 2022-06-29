@@ -4,7 +4,7 @@
 
 import UIKit
 
-class PhotosViewController: UIViewController, BaseViewControllerProtocol {
+class PhotosViewController: UIViewController {
 
     struct Option {
     }
@@ -13,8 +13,6 @@ class PhotosViewController: UIViewController, BaseViewControllerProtocol {
     @IBOutlet private var topView: UIView!
     @IBOutlet private var backButton: StateAlphaButton!
     @IBOutlet private var barTitle: UILabel!
-
-    private weak var appRouter: RoutingSupport?
 
     static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
         let viewController = R.unwrap({ R.storyboard.actors.photosViewController() })
@@ -34,12 +32,12 @@ class PhotosViewController: UIViewController, BaseViewControllerProtocol {
 
         barTitle.text = NSLocalizedString("Photos", comment: "")
         barTitle.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
-        barTitle.textColor = R.color.cDark()
+        barTitle.textColor = UIColor.loadColorFromBundle(name: "cDark")
 
         let backIconConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .medium, scale: .medium)
         let backIconImage = UIImage(systemName: "arrow.left", withConfiguration: backIconConfig)
         backButton.setImage(backIconImage, for: .normal)
-        backButton.tintColor = R.color.accentColor()
+        backButton.tintColor = UIColor.loadColorFromBundle(name: "accentColor")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +46,7 @@ class PhotosViewController: UIViewController, BaseViewControllerProtocol {
     }
 
     @IBAction private func backButtonPressed(_ sender: UIButton) {
-        appRouter?.appRouter.dismissViewController(self, animated: true)
+        dismiss(animated: true)
     }
+
 }

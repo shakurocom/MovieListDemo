@@ -9,12 +9,12 @@ class MovieSheduleCell: UICollectionViewCell {
     @IBOutlet private var timeTitle: UILabel!
 
     var selectedTintColor: UIColor? = CinemaStyleSheet.Color.sheduleButtonBackground
-    var normalTintColor: UIColor? = R.color.bg50()
+    var normalTintColor: UIColor? = UIColor.loadColorFromBundle(name: "bg50")
 
     override var isSelected: Bool {
         didSet {
             if let selectedTint = selectedTintColor, let normalTint = normalTintColor {
-                timeTitle.textColor = isSelected ? .white : R.color.c200()
+                timeTitle.textColor = isSelected ? .white : UIColor.loadColorFromBundle(name: "c200")
                 backgroundColor = isSelected ? selectedTint : normalTint
             }
         }
