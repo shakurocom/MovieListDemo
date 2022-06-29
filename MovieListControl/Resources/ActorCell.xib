@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ActorCell" id="gTV-IL-0wX" customClass="ActorCell" customModule="Shakuro_Apps" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="73"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="339" height="73"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6zc-BO-qJT" userLabel="ContainerView">
+                        <rect key="frame" x="0.0" y="0.0" width="339" height="73"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="actor1" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-0h-7bQ">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="73"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfL-5M-1Em">
+                                <rect key="frame" x="80" y="18.5" width="96" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keanu Reeves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvv-43-OHI" userLabel="name">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOj-oe-AvA" userLabel="role">
+                                        <rect key="frame" x="0.0" y="18" width="96" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Nvv-43-OHI" firstAttribute="leading" secondItem="NfL-5M-1Em" secondAttribute="leading" id="374-Ut-LDo"/>
+                                    <constraint firstItem="Nvv-43-OHI" firstAttribute="top" secondItem="NfL-5M-1Em" secondAttribute="top" id="9yC-4F-d76"/>
+                                    <constraint firstAttribute="bottom" secondItem="jOj-oe-AvA" secondAttribute="bottom" id="ayX-ew-h6z"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nvv-43-OHI" secondAttribute="trailing" id="gO4-XN-oL1"/>
+                                    <constraint firstAttribute="trailing" secondItem="jOj-oe-AvA" secondAttribute="trailing" id="gic-r6-rsz"/>
+                                    <constraint firstItem="jOj-oe-AvA" firstAttribute="leading" secondItem="NfL-5M-1Em" secondAttribute="leading" id="hXQ-S4-7mW"/>
+                                    <constraint firstItem="jOj-oe-AvA" firstAttribute="top" secondItem="Nvv-43-OHI" secondAttribute="bottom" id="ikV-ya-YCZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bvy-0h-7bQ" firstAttribute="leading" secondItem="6zc-BO-qJT" secondAttribute="leading" id="1pr-UC-ROw"/>
+                            <constraint firstItem="Bvy-0h-7bQ" firstAttribute="top" secondItem="6zc-BO-qJT" secondAttribute="top" id="7PI-X6-jU8"/>
+                            <constraint firstItem="NfL-5M-1Em" firstAttribute="leading" secondItem="Bvy-0h-7bQ" secondAttribute="trailing" constant="16" id="HCw-Sq-B7l"/>
+                            <constraint firstItem="NfL-5M-1Em" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6zc-BO-qJT" secondAttribute="top" id="Wtl-Ce-lg6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NfL-5M-1Em" secondAttribute="trailing" constant="16" id="ZUq-8K-Pfy"/>
+                            <constraint firstItem="NfL-5M-1Em" firstAttribute="centerY" secondItem="6zc-BO-qJT" secondAttribute="centerY" id="Zkm-FD-p0y"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NfL-5M-1Em" secondAttribute="bottom" id="bRa-BO-bt8"/>
+                            <constraint firstAttribute="bottom" secondItem="Bvy-0h-7bQ" secondAttribute="bottom" id="v3I-MG-xZ4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" name="Bg200"/>
+            <constraints>
+                <constraint firstItem="6zc-BO-qJT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GBt-kf-qLu"/>
+                <constraint firstAttribute="trailing" secondItem="6zc-BO-qJT" secondAttribute="trailing" id="GqQ-e0-gBb"/>
+                <constraint firstAttribute="top" secondItem="6zc-BO-qJT" secondAttribute="top" id="KfR-tA-1y7"/>
+                <constraint firstAttribute="bottom" secondItem="6zc-BO-qJT" secondAttribute="bottom" id="Wvu-ZT-amu"/>
+            </constraints>
+            <size key="customSize" width="339" height="122"/>
+            <connections>
+                <outlet property="containerView" destination="6zc-BO-qJT" id="Oj6-80-tNU"/>
+                <outlet property="imageView" destination="Bvy-0h-7bQ" id="OO9-v5-IHj"/>
+                <outlet property="nameLabel" destination="Nvv-43-OHI" id="kJS-dK-5ge"/>
+                <outlet property="roleLabel" destination="jOj-oe-AvA" id="khu-aD-Zqw"/>
+            </connections>
+            <point key="canvasLocation" x="-176.08695652173915" y="116.18303571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="actor1" width="64" height="64"/>
+        <namedColor name="Bg200">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

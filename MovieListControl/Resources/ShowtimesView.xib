@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShowtimesView" customModule="Shakuro_Apps" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="436" height="477"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtp-U2-SSQ" userLabel="DateContainerView">
+                    <rect key="frame" x="0.0" y="0.0" width="436" height="133"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIF-hz-RsZ">
+                            <rect key="frame" x="16" y="0.0" width="420" height="51"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="cDark"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAm-YO-vnx" userLabel="CalendarView">
+                            <rect key="frame" x="0.0" y="67" width="436" height="66"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="66" id="Zqa-nb-Njz"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="Bg200"/>
+                    <constraints>
+                        <constraint firstItem="LAm-YO-vnx" firstAttribute="top" secondItem="XIF-hz-RsZ" secondAttribute="bottom" constant="16" id="4v5-2T-Thh"/>
+                        <constraint firstItem="XIF-hz-RsZ" firstAttribute="top" secondItem="mtp-U2-SSQ" secondAttribute="top" id="9Db-Pt-mlq"/>
+                        <constraint firstAttribute="trailing" secondItem="XIF-hz-RsZ" secondAttribute="trailing" id="Gg6-bz-ea9"/>
+                        <constraint firstItem="XIF-hz-RsZ" firstAttribute="leading" secondItem="mtp-U2-SSQ" secondAttribute="leading" constant="16" id="HGi-Rb-HhP"/>
+                        <constraint firstAttribute="bottom" secondItem="LAm-YO-vnx" secondAttribute="bottom" id="iRE-Ly-5VM"/>
+                        <constraint firstItem="LAm-YO-vnx" firstAttribute="leading" secondItem="mtp-U2-SSQ" secondAttribute="leading" id="kkL-7E-km2"/>
+                        <constraint firstAttribute="trailing" secondItem="LAm-YO-vnx" secondAttribute="trailing" id="vTH-FI-jcr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqy-w2-O1g" userLabel="SheduleContainerView">
+                    <rect key="frame" x="16" y="143" width="404" height="334"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="334" id="u8M-XY-kQH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="Bg200"/>
+            <constraints>
+                <constraint firstItem="mtp-U2-SSQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="13e-iJ-E4Y"/>
+                <constraint firstAttribute="trailing" secondItem="Iqy-w2-O1g" secondAttribute="trailing" constant="16" id="3jc-Vs-upc"/>
+                <constraint firstAttribute="trailing" secondItem="mtp-U2-SSQ" secondAttribute="trailing" id="ESl-Jj-kOO"/>
+                <constraint firstAttribute="bottom" secondItem="Iqy-w2-O1g" secondAttribute="bottom" id="UuB-sU-TCR"/>
+                <constraint firstItem="mtp-U2-SSQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XsG-OG-K8Q"/>
+                <constraint firstItem="Iqy-w2-O1g" firstAttribute="top" secondItem="mtp-U2-SSQ" secondAttribute="bottom" constant="10" id="iMK-g8-1nd"/>
+                <constraint firstItem="Iqy-w2-O1g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="tWt-qZ-O2D"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="calendarContainerView" destination="LAm-YO-vnx" id="Ic0-j0-gXu"/>
+                <outlet property="dateLabel" destination="XIF-hz-RsZ" id="tRp-Gg-4hq"/>
+                <outlet property="sheduleCollectionViewHeightConstraint" destination="u8M-XY-kQH" id="ZEB-ov-Gzq"/>
+                <outlet property="sheduleContainerView" destination="Iqy-w2-O1g" id="cdS-Ag-h0m"/>
+            </connections>
+            <point key="canvasLocation" x="-252.17391304347828" y="266.85267857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Bg200">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cDark">
+            <color red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

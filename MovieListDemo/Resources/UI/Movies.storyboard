@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Movies List View Controller-->
+        <scene sceneID="yBE-72-PdR">
+            <objects>
+                <viewController storyboardIdentifier="MoviesListViewController" id="aZ2-ja-mcg" customClass="MoviesListViewController" customModule="Shakuro_Apps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="chf-9e-0Ja">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QZ3-m7-ZaM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="24" minimumInteritemSpacing="0.0" id="xyv-eI-c9T">
+                                    <size key="itemSize" width="164" height="298"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="32" minY="0.0" maxX="32" maxY="32"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviesListCell" id="PNL-Kd-zUd" customClass="MoviesListCell" customModule="Shakuro_Apps" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="0.0" width="164" height="298"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hOl-cu-Wp1" customClass="CardContentView" customModule="Shakuro_Apps" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="298"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="cardContentView" destination="hOl-cu-Wp1" id="tUK-la-fNm"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="aZ2-ja-mcg" id="Q6l-Z5-DAq"/>
+                                    <outlet property="delegate" destination="aZ2-ja-mcg" id="HnZ-H0-NBf"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eDA-41-Ko3"/>
+                        <color key="backgroundColor" name="Bg200"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="QZ3-m7-ZaM" secondAttribute="bottom" id="24t-nU-Xec"/>
+                            <constraint firstAttribute="trailing" secondItem="QZ3-m7-ZaM" secondAttribute="trailing" id="eIY-NM-IvA"/>
+                            <constraint firstItem="QZ3-m7-ZaM" firstAttribute="top" secondItem="chf-9e-0Ja" secondAttribute="top" id="gSC-N3-57H"/>
+                            <constraint firstItem="QZ3-m7-ZaM" firstAttribute="leading" secondItem="chf-9e-0Ja" secondAttribute="leading" id="gpF-7N-A7j"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="QZ3-m7-ZaM" id="PWS-Re-07U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxX-5I-ZC6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="62"/>
+        </scene>
+        <!--Movie Details View Controller-->
+        <scene sceneID="E5g-VG-ss6">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" id="fGe-gq-uWx" customClass="MovieDetailsViewController" customModule="Shakuro_Apps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6b4-wC-mBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVG-5s-BCo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-qm-SSm" customClass="CardContentView" customModule="Shakuro_Apps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="335"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="1" constant="335" id="Rdf-Gu-7DX"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA, 2019  /  2h 10min  /  PG-16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQs-6X-s61">
+                                        <rect key="frame" x="16" y="333" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="SubtitleText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Ph-I9-XBv">
+                                        <rect key="frame" x="0.0" y="473.5" width="414" height="700"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtA-sb-mU6">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="WMY-yQ-FCn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-8K-ENJ" userLabel="MovieDetailsContainerView" customClass="MovieDetailsContainer" customModule="Shakuro_Apps" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="100" width="414" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="fQp-6m-v2M"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Oe-k3v" userLabel="MovieShowtimesContainerView" customClass="MovieShowtimesContainer" customModule="Shakuro_Apps" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="400" width="414" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="hKC-Ue-A1a"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNr-57-tJ5">
+                                        <rect key="frame" x="16" y="385.5" width="382" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-Ys-1B5" customClass="ContentModeSelectButton" customModule="Shakuro_Apps" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="191" height="48"/>
+                                                <color key="backgroundColor" name="BlueButton"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Showtimes">
+                                                    <color key="titleColor" name="background100"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showtimesDidPress:" destination="fGe-gq-uWx" eventType="touchUpInside" id="Cg9-9g-Xca"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZ5-vb-okz" customClass="ContentModeSelectButton" customModule="Shakuro_Apps" customModuleProvider="target">
+                                                <rect key="frame" x="191" y="0.0" width="191" height="48"/>
+                                                <color key="backgroundColor" name="BlueButton"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Details">
+                                                    <color key="titleColor" name="background100"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="detailsDidPress:" destination="fGe-gq-uWx" eventType="touchUpInside" id="vNj-7a-E8z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="VZ5-vb-okz" firstAttribute="width" secondItem="QKf-Ys-1B5" secondAttribute="width" id="1xc-Vx-9b6"/>
+                                            <constraint firstItem="QKf-Ys-1B5" firstAttribute="top" secondItem="GNr-57-tJ5" secondAttribute="top" id="4Et-vb-cM4"/>
+                                            <constraint firstItem="VZ5-vb-okz" firstAttribute="leading" secondItem="QKf-Ys-1B5" secondAttribute="trailing" id="4V8-Og-LDh"/>
+                                            <constraint firstItem="VZ5-vb-okz" firstAttribute="top" secondItem="GNr-57-tJ5" secondAttribute="top" id="7UB-To-Cj0"/>
+                                            <constraint firstItem="QKf-Ys-1B5" firstAttribute="leading" secondItem="GNr-57-tJ5" secondAttribute="leading" id="EF2-yK-mq1"/>
+                                            <constraint firstAttribute="trailing" secondItem="VZ5-vb-okz" secondAttribute="trailing" id="EsO-TB-oBu"/>
+                                            <constraint firstAttribute="height" constant="48" id="MP1-K1-66q"/>
+                                            <constraint firstAttribute="bottom" secondItem="QKf-Ys-1B5" secondAttribute="bottom" id="Zfh-O9-fM9"/>
+                                            <constraint firstAttribute="bottom" secondItem="VZ5-vb-okz" secondAttribute="bottom" id="f8E-v7-oqX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mHa-qm-SSm" firstAttribute="width" secondItem="oVG-5s-BCo" secondAttribute="width" id="2Sp-Oc-j09"/>
+                                    <constraint firstItem="7Ph-I9-XBv" firstAttribute="top" secondItem="GNr-57-tJ5" secondAttribute="bottom" constant="40" id="8IB-ck-iUh"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Ph-I9-XBv" secondAttribute="trailing" id="AAP-8V-zyi"/>
+                                    <constraint firstAttribute="trailing" secondItem="GNr-57-tJ5" secondAttribute="trailing" constant="16" id="D9L-Cj-Wgp"/>
+                                    <constraint firstItem="mHa-qm-SSm" firstAttribute="leading" secondItem="oVG-5s-BCo" secondAttribute="leading" id="HuR-RA-3yt"/>
+                                    <constraint firstItem="GNr-57-tJ5" firstAttribute="leading" secondItem="oVG-5s-BCo" secondAttribute="leading" constant="16" id="Jcb-3D-zpE"/>
+                                    <constraint firstAttribute="trailing" secondItem="mHa-qm-SSm" secondAttribute="trailing" id="KoC-Ti-BA6"/>
+                                    <constraint firstItem="mQs-6X-s61" firstAttribute="leading" secondItem="oVG-5s-BCo" secondAttribute="leading" constant="16" id="QHC-pb-D2w"/>
+                                    <constraint firstItem="mQs-6X-s61" firstAttribute="top" secondItem="mHa-qm-SSm" secondAttribute="bottom" constant="-2" id="QZo-Ok-6tG"/>
+                                    <constraint firstAttribute="bottom" secondItem="7Ph-I9-XBv" secondAttribute="bottom" constant="16" id="RYR-CX-N9v"/>
+                                    <constraint firstItem="mHa-qm-SSm" firstAttribute="top" secondItem="oVG-5s-BCo" secondAttribute="top" id="XO4-gr-0dY"/>
+                                    <constraint firstAttribute="trailing" secondItem="mQs-6X-s61" secondAttribute="trailing" constant="16" id="dgj-Ou-IJR"/>
+                                    <constraint firstItem="GNr-57-tJ5" firstAttribute="top" secondItem="mQs-6X-s61" secondAttribute="bottom" constant="32" id="eUV-Ph-KUH"/>
+                                    <constraint firstItem="7Ph-I9-XBv" firstAttribute="leading" secondItem="oVG-5s-BCo" secondAttribute="leading" id="hbh-sk-79B"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dFa-vu-831"/>
+                        <color key="backgroundColor" name="Bg200"/>
+                        <constraints>
+                            <constraint firstItem="oVG-5s-BCo" firstAttribute="leading" secondItem="dFa-vu-831" secondAttribute="leading" id="1cU-Vu-HSV"/>
+                            <constraint firstItem="oVG-5s-BCo" firstAttribute="top" secondItem="6b4-wC-mBZ" secondAttribute="top" priority="750" id="2dM-7u-Wup"/>
+                            <constraint firstAttribute="bottom" secondItem="oVG-5s-BCo" secondAttribute="bottom" id="Ho5-iL-Xzp"/>
+                            <constraint firstItem="dFa-vu-831" firstAttribute="trailing" secondItem="oVG-5s-BCo" secondAttribute="trailing" id="eKk-JT-6Hb"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="buttonContainer" destination="GNr-57-tJ5" id="xaQ-US-Wnx"/>
+                        <outlet property="cardContentView" destination="mHa-qm-SSm" id="beb-bb-zEp"/>
+                        <outlet property="comingSoonHeight" destination="WMY-yQ-FCn" id="9m2-4r-JoJ"/>
+                        <outlet property="comingSoonLabel" destination="rtA-sb-mU6" id="1Nq-H6-4hb"/>
+                        <outlet property="countryLabel" destination="mQs-6X-s61" id="fbd-uf-uPg"/>
+                        <outlet property="detailsButton" destination="VZ5-vb-okz" id="fU5-VX-SAI"/>
+                        <outlet property="movieDetailsContainer" destination="ktt-8K-ENJ" id="0Ib-Yh-z97"/>
+                        <outlet property="movieDetailsContainerHeight" destination="fQp-6m-v2M" id="JWS-nO-387"/>
+                        <outlet property="movieShowtimesContainer" destination="GlG-Oe-k3v" id="fbm-xK-7SM"/>
+                        <outlet property="movieShowtimesContainerHeight" destination="hKC-Ue-A1a" id="E4I-l6-eu1"/>
+                        <outlet property="scrollView" destination="oVG-5s-BCo" id="Vfx-LY-fUP"/>
+                        <outlet property="showtimesButton" destination="QKf-Ys-1B5" id="VQx-7C-WEI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1b-AV-nCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891" y="62"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Bg200">
+            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BlueButton">
+            <color red="0.18823529411764706" green="0.30980392156862746" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SubtitleText">
+            <color red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background100">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
