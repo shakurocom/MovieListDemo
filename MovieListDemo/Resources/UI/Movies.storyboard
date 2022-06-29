@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Movies List View Controller-->
         <scene sceneID="yBE-72-PdR">
             <objects>
-                <viewController storyboardIdentifier="MoviesListViewController" id="aZ2-ja-mcg" customClass="MoviesListViewController" customModule="Shakuro_Apps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoviesListViewController" id="aZ2-ja-mcg" customClass="MoviesListViewController" customModule="MovieList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chf-9e-0Ja">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,20 +26,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="32" minY="0.0" maxX="32" maxY="32"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MoviesListCell" id="PNL-Kd-zUd" customClass="MoviesListCell" customModule="Shakuro_Apps" customModuleProvider="target">
-                                        <rect key="frame" x="32" y="0.0" width="164" height="298"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hOl-cu-Wp1" customClass="CardContentView" customModule="Shakuro_Apps" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="164" height="298"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </collectionViewCellContentView>
-                                        <connections>
-                                            <outlet property="cardContentView" destination="hOl-cu-Wp1" id="tUK-la-fNm"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="aZ2-ja-mcg" id="Q6l-Z5-DAq"/>
                                     <outlet property="delegate" destination="aZ2-ja-mcg" id="HnZ-H0-NBf"/>
@@ -68,7 +54,7 @@
         <!--Movie Details View Controller-->
         <scene sceneID="E5g-VG-ss6">
             <objects>
-                <viewController storyboardIdentifier="MovieDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" id="fGe-gq-uWx" customClass="MovieDetailsViewController" customModule="Shakuro_Apps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieDetailsViewController" automaticallyAdjustsScrollViewInsets="NO" id="fGe-gq-uWx" customClass="MovieDetailsViewController" customModule="MovieList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6b4-wC-mBZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +62,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVG-5s-BCo">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-qm-SSm" customClass="CardContentView" customModule="Shakuro_Apps" customModuleProvider="target">
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-qm-SSm" customClass="CardContentView" customModule="MovieList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="335"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -101,13 +87,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-8K-ENJ" userLabel="MovieDetailsContainerView" customClass="MovieDetailsContainer" customModule="Shakuro_Apps" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktt-8K-ENJ" userLabel="MovieDetailsContainerView" customClass="MovieDetailsContainer" customModule="MovieList" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="100" width="414" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="fQp-6m-v2M"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Oe-k3v" userLabel="MovieShowtimesContainerView" customClass="MovieShowtimesContainer" customModule="Shakuro_Apps" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Oe-k3v" userLabel="MovieShowtimesContainerView" customClass="MovieShowtimesContainer" customModule="MovieList" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="400" width="414" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="hKC-Ue-A1a"/>
@@ -118,7 +104,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNr-57-tJ5">
                                         <rect key="frame" x="16" y="385.5" width="382" height="48"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-Ys-1B5" customClass="ContentModeSelectButton" customModule="Shakuro_Apps" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKf-Ys-1B5" customClass="ContentModeSelectButton" customModule="MovieList" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="191" height="48"/>
                                                 <color key="backgroundColor" name="BlueButton"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,7 +115,7 @@
                                                     <action selector="showtimesDidPress:" destination="fGe-gq-uWx" eventType="touchUpInside" id="Cg9-9g-Xca"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZ5-vb-okz" customClass="ContentModeSelectButton" customModule="Shakuro_Apps" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZ5-vb-okz" customClass="ContentModeSelectButton" customModule="MovieList" customModuleProvider="target">
                                                 <rect key="frame" x="191" y="0.0" width="191" height="48"/>
                                                 <color key="backgroundColor" name="BlueButton"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

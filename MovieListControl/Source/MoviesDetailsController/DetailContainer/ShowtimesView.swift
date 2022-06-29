@@ -31,7 +31,15 @@ class ShowtimesView: UIView {
     private var dates: [Day] = []
 
     static func loadFromNib() -> ShowtimesView {
-        return R.unwrap({ R.nib.showtimesView(owner: nil) })
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: ShowtimesView.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        let showtimesView = UINib(nibName: "ShowtimesView", bundle: bundle).instantiate(withOwner: nil).first as? ShowtimesView
+        return unwrap({ showtimesView })
     }
 
     override func awakeFromNib() {
@@ -100,12 +108,12 @@ extension ShowtimesView: UICollectionViewDataSource, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case calendarCollectionView:
-            let cell: CalendarItemCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.calendarItemCollectionViewCell.identifier, for: indexPath)
+            let cell: CalendarItemCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarItemCollectionViewCell", for: indexPath)
             cell.title = dates[indexPath.item].dayOfTheWeek
             cell.subtitle = dates[indexPath.item].dateOfTheWeek
             return cell
         case sheduleCollectionView:
-            let cell: SheduleCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.sheduleCollectionViewCell.identifier, for: indexPath)
+            let cell: SheduleCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SheduleCollectionViewCell", for: indexPath)
             cell.setCinema(cinema: movieItem?.cinema[indexPath.item], date: Date())
             return cell
         default:
@@ -168,7 +176,14 @@ private extension ShowtimesView {
         calendarCollectionView.showsHorizontalScrollIndicator = false
         calendarCollectionView.backgroundColor = UIColor.clear
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        calendarCollectionView.register(R.nib.calendarItemCollectionViewCell)
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: ShowtimesView.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        calendarCollectionView.register(UINib(nibName: "CalendarItemCollectionViewCell", bundle: bundle), forCellWithReuseIdentifier: "CalendarItemCollectionViewCell")
 
         calendarContainerView.addSubview(calendarCollectionView)
 
@@ -201,7 +216,15 @@ private extension ShowtimesView {
         sheduleCollectionView.showsHorizontalScrollIndicator = false
         sheduleCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         sheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        sheduleCollectionView.register(R.nib.sheduleCollectionViewCell)
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: ShowtimesView.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        calendarCollectionView.register(UINib(nibName: "SheduleCollectionViewCell", bundle: bundle),
+                                        forCellWithReuseIdentifier: "SheduleCollectionViewCell")
 
         sheduleContainerView.addSubview(sheduleCollectionView)
 

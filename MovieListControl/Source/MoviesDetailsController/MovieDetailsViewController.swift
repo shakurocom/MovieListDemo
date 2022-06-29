@@ -240,21 +240,31 @@ class MovieDetailsViewController: UIViewController {
 
 extension MovieDetailsViewController: DetailsViewDelegate {
     func detailsViewMorePhotosDidPress(_ detailsView: DetailsView) {
-        _ = appRouter?.presentViewController(type: PhotosViewController.self,
-                                             options: PhotosViewController.Option(),
-                                             from: self,
-                                             style: .modalDefault,
-                                             animated: true)
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: MovieDetailsViewController.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: bundle)
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
 
     func detailsViewActorsDidPress(_ detailsView: DetailsView) {
-        _ = appRouter?.presentViewController(type: ActorListViewController.self,
-                                             options: ActorListViewController.Option(actors: movie.actor),
-                                             from: self,
-                                             style: .modalDefault,
-                                             animated: true)
-
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: ActorListViewController.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        let viewController = PhotosViewController(nibName: "ActorListViewController", bundle: bundle)
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
     }
+
     func detailsViewTrailerDidPress(_ detailsView: DetailsView) {
         guard let url = URL(string: "https://www.imdb.com/video/vi2273816345?ref_=nv_sr_srsg_1") else {
             return

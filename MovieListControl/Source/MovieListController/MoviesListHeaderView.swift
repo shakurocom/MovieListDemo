@@ -26,7 +26,15 @@ class MoviesListHeaderView: UIView {
     var movieItems: [MovieItem] = []
 
     static func loadFromNib() -> MoviesListHeaderView {
-        return R.unwrap({ R.nib.moviesListHeaderView(owner: nil) })
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: MoviesListHeaderView.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        let headerView = UINib(nibName: "MoviesListHeaderView", bundle: bundle).instantiate(withOwner: nil).first as? MoviesListHeaderView
+        return unwrap({ headerView })
     }
 
     override func awakeFromNib() {
@@ -68,7 +76,14 @@ class MoviesListHeaderView: UIView {
         moviesListHeaderCollectionView.delegate = self
         moviesListHeaderCollectionView.dataSource = self
 
-        moviesListHeaderCollectionView.register(R.nib.moviesListHeaderCell)
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: MoviesListHeaderView.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        moviesListHeaderCollectionView.register(UINib(nibName: "MoviesListHeaderCell", bundle: bundle), forCellWithReuseIdentifier: "MoviesListHeaderCell")
         scrollViewDidScroll(moviesListHeaderCollectionView)
     }
 
@@ -106,7 +121,7 @@ extension MoviesListHeaderView: UICollectionViewDataSource, UICollectionViewDele
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: MoviesListHeaderCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.moviesListHeaderCell.identifier, for: indexPath)
+        let cell: MoviesListHeaderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesListHeaderCell", for: indexPath)
         cell.cardContentView.setupUIForMode(mode: .header)
         cell.cardContentView.setMovieItem(movieItem: movieItems[indexPath.item])
         cell.transform = CGAffineTransform(scaleX: Constant.maxScaleX, y: Constant.maxScaleX)

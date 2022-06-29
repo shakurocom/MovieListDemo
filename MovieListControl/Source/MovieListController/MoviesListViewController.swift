@@ -27,7 +27,14 @@ class MoviesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let bundle: Bundle
+        if let podBundleURL = Bundle(for: ActorListViewController.self).url(forResource: "MovieList", withExtension: "bundle"),
+           let podBundle = Bundle(url: podBundleURL) {
+            bundle = podBundle
+        } else {
+            bundle = Bundle.main
+        }
+        collectionView.register(UINib(nibName: "MoviesListCell", bundle: bundle), forCellWithReuseIdentifier: "MoviesListCell")
         collectionView.register(MoviesListCollectionViewHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: MoviesListCollectionViewHeader.reuseIdentifier)
@@ -70,7 +77,7 @@ extension MoviesListViewController: UICollectionViewDataSource, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: MoviesListCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.moviesListCell.identifier, for: indexPath)
+        let cell: MoviesListCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesListCell", for: indexPath)
         cell.cardContentView.setupUIForMode(mode: .list)
         cell.cardContentView.setMovieItem(movieItem: movieItems[indexPath.item])
         return cell
