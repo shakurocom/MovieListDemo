@@ -12,6 +12,7 @@
 		6B241248286D908C00C94606 /* ActorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B241247286D908C00C94606 /* ActorTableViewCell.xib */; };
 		6B24124A286D942100C94606 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B241249286D942100C94606 /* InfoCell.xib */; };
 		6B24124C286D946200C94606 /* FilmographyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B24124B286D946200C94606 /* FilmographyCell.xib */; };
+		6B24124E286DA49200C94606 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B24124D286DA49200C94606 /* MovieDetailsViewController.xib */; };
 		6B6D4DC8286C354100C85391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D4DC7286C354100C85391 /* AppDelegate.swift */; };
 		6B6D4DCA286C354100C85391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D4DC9286C354100C85391 /* SceneDelegate.swift */; };
 		6B6D4DCC286C354100C85391 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D4DCB286C354100C85391 /* ViewController.swift */; };
@@ -87,6 +88,7 @@
 		6B241247286D908C00C94606 /* ActorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActorTableViewCell.xib; sourceTree = "<group>"; };
 		6B241249286D942100C94606 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
 		6B24124B286D946200C94606 /* FilmographyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmographyCell.xib; sourceTree = "<group>"; };
+		6B24124D286DA49200C94606 /* MovieDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsViewController.xib; sourceTree = "<group>"; };
 		6B6D4DC4286C354100C85391 /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6D4DC7286C354100C85391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B6D4DC9286C354100C85391 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				6B6D4DFE286C37F400C85391 /* ShowtimesView.xib */,
 				6B6D4E21286C384100C85391 /* TrailerCell.xib */,
 				6B6D4E61286C3EFC00C85391 /* Fonts */,
+				6B24124D286DA49200C94606 /* MovieDetailsViewController.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				6B6D4E34286C384100C85391 /* MovieSheduleCell.xib in Resources */,
 				6B24124C286D946200C94606 /* FilmographyCell.xib in Resources */,
 				6B6D4E5D286C3EF600C85391 /* Poppins-SemiBold.ttf in Resources */,
+				6B24124E286DA49200C94606 /* MovieDetailsViewController.xib in Resources */,
 				6B6D4E6A286C5BC700C85391 /* MoviesListCell.xib in Resources */,
 				6B6D4E2B286C384100C85391 /* CalendarItemCollectionViewCell.xib in Resources */,
 				6B6D4E60286C3EF600C85391 /* Poppins-Bold.ttf in Resources */,

@@ -33,7 +33,7 @@ class DetailsView: UIView {
     private var movieItem: MovieItem?
 
     static func loadFromNib() -> DetailsView {
-        let detailsView = UINib(nibName: "Details", bundle: Bundle.findBundleIfNeeded(for: DetailsView.self)).instantiate(withOwner: nil).first as? DetailsView
+        let detailsView = UINib(nibName: "DetailsView", bundle: Bundle.findBundleIfNeeded(for: DetailsView.self)).instantiate(withOwner: nil).first as? DetailsView
         return unwrap({ detailsView })
     }
 

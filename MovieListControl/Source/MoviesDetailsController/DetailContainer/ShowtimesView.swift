@@ -204,7 +204,7 @@ private extension ShowtimesView {
         sheduleCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         sheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
 
-        calendarCollectionView.register(UINib(nibName: "SheduleCollectionViewCell", bundle: Bundle.findBundleIfNeeded(for: ShowtimesView.self)),
+        sheduleCollectionView.register(UINib(nibName: "SheduleCollectionViewCell", bundle: Bundle.findBundleIfNeeded(for: SheduleCollectionViewCell.self)),
                                         forCellWithReuseIdentifier: "SheduleCollectionViewCell")
 
         sheduleContainerView.addSubview(sheduleCollectionView)
