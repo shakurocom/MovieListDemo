@@ -188,6 +188,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6B241255286DBE8400C94606 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6B6D4E20286C384100C85391 /* ActorCell.xib */,
+				6B241247286D908C00C94606 /* ActorTableViewCell.xib */,
+				6B6D4E1F286C384100C85391 /* CalendarItemCollectionViewCell.xib */,
+				6B24124B286D946200C94606 /* FilmographyCell.xib */,
+				6B241249286D942100C94606 /* InfoCell.xib */,
+				6B6D4E28286C384100C85391 /* MovieSheduleCell.xib */,
+				6B6D4E69286C5BC700C85391 /* MoviesListCell.xib */,
+				6B6D4DED286C36F100C85391 /* MoviesListHeaderCell.xib */,
+				6B6D4E1E286C384100C85391 /* PhotoCell.xib */,
+				6B6D4E25286C384100C85391 /* SheduleCollectionViewCell.xib */,
+				6B6D4E21286C384100C85391 /* TrailerCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6B241256286DBE9700C94606 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B241253286DB9FE00C94606 /* ActorDetailsViewController.xib */,
+				6B241251286DB80700C94606 /* ActorListViewController.xib */,
+				6B24124D286DA49200C94606 /* MovieDetailsViewController.xib */,
+				6B24124F286DA93200C94606 /* PhotosViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6B241257286DBEB000C94606 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B6D4E47286C389E00C85391 /* CardContentView.xib */,
+				6B6D4E02286C37F400C85391 /* DetailsView.xib */,
+				6B6D4DE1286C36E400C85391 /* MoviesListHeaderView.xib */,
+				6B6D4DFE286C37F400C85391 /* ShowtimesView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6B6D4DBB286C354100C85391 = {
 			isa = PBXGroup;
 			children = (
@@ -266,26 +306,10 @@
 			isa = PBXGroup;
 			children = (
 				6B6D4E4C286C3BD300C85391 /* CinemaAssets.xcassets */,
-				6B6D4E20286C384100C85391 /* ActorCell.xib */,
-				6B241247286D908C00C94606 /* ActorTableViewCell.xib */,
-				6B6D4E1F286C384100C85391 /* CalendarItemCollectionViewCell.xib */,
-				6B6D4E47286C389E00C85391 /* CardContentView.xib */,
-				6B6D4E02286C37F400C85391 /* DetailsView.xib */,
-				6B24124B286D946200C94606 /* FilmographyCell.xib */,
-				6B241249286D942100C94606 /* InfoCell.xib */,
-				6B6D4E28286C384100C85391 /* MovieSheduleCell.xib */,
-				6B6D4E69286C5BC700C85391 /* MoviesListCell.xib */,
-				6B6D4DED286C36F100C85391 /* MoviesListHeaderCell.xib */,
-				6B6D4DE1286C36E400C85391 /* MoviesListHeaderView.xib */,
-				6B6D4E1E286C384100C85391 /* PhotoCell.xib */,
-				6B6D4E25286C384100C85391 /* SheduleCollectionViewCell.xib */,
-				6B6D4DFE286C37F400C85391 /* ShowtimesView.xib */,
-				6B6D4E21286C384100C85391 /* TrailerCell.xib */,
+				6B241255286DBE8400C94606 /* Cells */,
+				6B241256286DBE9700C94606 /* Controllers */,
 				6B6D4E61286C3EFC00C85391 /* Fonts */,
-				6B24124D286DA49200C94606 /* MovieDetailsViewController.xib */,
-				6B24124F286DA93200C94606 /* PhotosViewController.xib */,
-				6B241251286DB80700C94606 /* ActorListViewController.xib */,
-				6B241253286DB9FE00C94606 /* ActorDetailsViewController.xib */,
+				6B241257286DBEB000C94606 /* Views */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
