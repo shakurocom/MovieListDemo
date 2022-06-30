@@ -8,9 +8,6 @@ import UIKit
 
 class MoviesListViewController: UIViewController {
 
-    struct Option {
-    }
-
     private enum Constant {
         static let aspectRatio: CGFloat = 298 / 164
         static let topInset: CGFloat = 121

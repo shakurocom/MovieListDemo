@@ -6,11 +6,6 @@ import UIKit
 
 class ActorDetailsViewController: UIViewController {
 
-    struct Option {
-        let actor: Actor
-        let transition: UIViewControllerTransitioningDelegate
-    }
-
     @IBOutlet var aScrollView: UIScrollView!
     @IBOutlet var photoContainerView: UIView!
     @IBOutlet var photoImageView: UIImageView!

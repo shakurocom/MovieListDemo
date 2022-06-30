@@ -54,12 +54,6 @@ class MovieDetailsViewController: UIViewController {
         return pan
     }()
 
-    struct Option {
-        let movieItem: MovieItem
-        let fromCardContentViewMode: CardContentView.Mode
-        let transition: CardTransition?
-    }
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

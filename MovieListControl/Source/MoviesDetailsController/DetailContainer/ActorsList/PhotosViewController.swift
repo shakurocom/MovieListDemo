@@ -6,9 +6,6 @@ import UIKit
 
 class PhotosViewController: UIViewController {
 
-    struct Option {
-    }
-
     @IBOutlet private var scrollView: UIScrollView!
     @IBOutlet private var topView: UIView!
     @IBOutlet private var backButton: StateAlphaButton!

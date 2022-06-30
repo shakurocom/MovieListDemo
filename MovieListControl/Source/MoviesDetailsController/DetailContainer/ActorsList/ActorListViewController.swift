@@ -6,10 +6,6 @@ import UIKit
 
 class ActorListViewController: UIViewController {
 
-    struct Option {
-        let actors: [Actor]
-    }
-
     @IBOutlet private var contentTableView: UITableView!
     @IBOutlet private var topView: UIView!
     @IBOutlet private var backButton: StateAlphaButton!
