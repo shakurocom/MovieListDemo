@@ -27,14 +27,7 @@ class MoviesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: ActorListViewController.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        collectionView.register(UINib(nibName: "MoviesListCell", bundle: bundle), forCellWithReuseIdentifier: "MoviesListCell")
+        collectionView.register(UINib(nibName: "MoviesListCell", bundle: Bundle.findBundleIfNeeded(for: ActorListViewController.self)), forCellWithReuseIdentifier: "MoviesListCell")
         collectionView.register(MoviesListCollectionViewHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: MoviesListCollectionViewHeader.reuseIdentifier)

@@ -42,16 +42,8 @@ public class FontsLoader {
             (name: "Poppins-SemiBold", fontExtension: "ttf"),
             (name: "Poppins-Regular", fontExtension: "ttf")
         ]
-        let bundle: Bundle
-        let podBundle = Bundle(for: MoviesListViewController.self)
-        if let actualBundleURL = podBundle.url(forResource: "MoviesList", withExtension: "bundle"),
-           let actualBundle = Bundle(url: actualBundleURL) {
-            bundle = actualBundle
-        } else {
-            bundle = Bundle.main
-        }
         for font in fonts {
-            _ = UIFont.registerFont(bundle: bundle, fontName: font.name, fontExtension: font.fontExtension)
+            _ = UIFont.registerFont(bundle: Bundle.findBundleIfNeeded(for: MoviesListViewController.self), fontName: font.name, fontExtension: font.fontExtension)
         }
     }
 

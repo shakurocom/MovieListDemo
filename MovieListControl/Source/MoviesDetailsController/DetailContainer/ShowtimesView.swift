@@ -31,14 +31,7 @@ class ShowtimesView: UIView {
     private var dates: [Day] = []
 
     static func loadFromNib() -> ShowtimesView {
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: ShowtimesView.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        let showtimesView = UINib(nibName: "ShowtimesView", bundle: bundle).instantiate(withOwner: nil).first as? ShowtimesView
+        let showtimesView = UINib(nibName: "ShowtimesView", bundle: Bundle.findBundleIfNeeded(for: ShowtimesView.self)).instantiate(withOwner: nil).first as? ShowtimesView
         return unwrap({ showtimesView })
     }
 
@@ -176,14 +169,8 @@ private extension ShowtimesView {
         calendarCollectionView.showsHorizontalScrollIndicator = false
         calendarCollectionView.backgroundColor = UIColor.clear
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: ShowtimesView.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        calendarCollectionView.register(UINib(nibName: "CalendarItemCollectionViewCell", bundle: bundle), forCellWithReuseIdentifier: "CalendarItemCollectionViewCell")
+
+        calendarCollectionView.register(UINib(nibName: "CalendarItemCollectionViewCell", bundle: Bundle.findBundleIfNeeded(for: ShowtimesView.self)), forCellWithReuseIdentifier: "CalendarItemCollectionViewCell")
 
         calendarContainerView.addSubview(calendarCollectionView)
 
@@ -216,14 +203,8 @@ private extension ShowtimesView {
         sheduleCollectionView.showsHorizontalScrollIndicator = false
         sheduleCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         sheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: ShowtimesView.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        calendarCollectionView.register(UINib(nibName: "SheduleCollectionViewCell", bundle: bundle),
+
+        calendarCollectionView.register(UINib(nibName: "SheduleCollectionViewCell", bundle: Bundle.findBundleIfNeeded(for: ShowtimesView.self)),
                                         forCellWithReuseIdentifier: "SheduleCollectionViewCell")
 
         sheduleContainerView.addSubview(sheduleCollectionView)

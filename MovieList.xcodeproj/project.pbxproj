@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4E478B36770DB633BC8E195E /* Pods_MovieList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7B089CB772A93CC496D620 /* Pods_MovieList.framework */; };
 		6B241246286D833E00C94606 /* Bundle+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B241245286D833E00C94606 /* Bundle+Helper.swift */; };
+		6B241248286D908C00C94606 /* ActorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B241247286D908C00C94606 /* ActorTableViewCell.xib */; };
+		6B24124A286D942100C94606 /* InfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B241249286D942100C94606 /* InfoCell.xib */; };
+		6B24124C286D946200C94606 /* FilmographyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B24124B286D946200C94606 /* FilmographyCell.xib */; };
 		6B6D4DC8286C354100C85391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D4DC7286C354100C85391 /* AppDelegate.swift */; };
 		6B6D4DCA286C354100C85391 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D4DC9286C354100C85391 /* SceneDelegate.swift */; };
 		6B6D4DCC286C354100C85391 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6D4DCB286C354100C85391 /* ViewController.swift */; };
@@ -82,6 +85,9 @@
 /* Begin PBXFileReference section */
 		387E0527BEF1E1C253037C55 /* Pods-MovieList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieList.debug.xcconfig"; path = "Target Support Files/Pods-MovieList/Pods-MovieList.debug.xcconfig"; sourceTree = "<group>"; };
 		6B241245286D833E00C94606 /* Bundle+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Helper.swift"; sourceTree = "<group>"; };
+		6B241247286D908C00C94606 /* ActorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActorTableViewCell.xib; sourceTree = "<group>"; };
+		6B241249286D942100C94606 /* InfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCell.xib; sourceTree = "<group>"; };
+		6B24124B286D946200C94606 /* FilmographyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilmographyCell.xib; sourceTree = "<group>"; };
 		6B6D4DC4286C354100C85391 /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6D4DC7286C354100C85391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B6D4DC9286C354100C85391 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -256,10 +262,14 @@
 			children = (
 				6B6D4E4C286C3BD300C85391 /* CinemaAssets.xcassets */,
 				6B6D4E20286C384100C85391 /* ActorCell.xib */,
+				6B241247286D908C00C94606 /* ActorTableViewCell.xib */,
 				6B6D4E1F286C384100C85391 /* CalendarItemCollectionViewCell.xib */,
 				6B6D4E47286C389E00C85391 /* CardContentView.xib */,
 				6B6D4E02286C37F400C85391 /* DetailsView.xib */,
+				6B24124B286D946200C94606 /* FilmographyCell.xib */,
+				6B241249286D942100C94606 /* InfoCell.xib */,
 				6B6D4E28286C384100C85391 /* MovieSheduleCell.xib */,
+				6B6D4E69286C5BC700C85391 /* MoviesListCell.xib */,
 				6B6D4DED286C36F100C85391 /* MoviesListHeaderCell.xib */,
 				6B6D4DE1286C36E400C85391 /* MoviesListHeaderView.xib */,
 				6B6D4E1E286C384100C85391 /* PhotoCell.xib */,
@@ -267,7 +277,6 @@
 				6B6D4DFE286C37F400C85391 /* ShowtimesView.xib */,
 				6B6D4E21286C384100C85391 /* TrailerCell.xib */,
 				6B6D4E61286C3EFC00C85391 /* Fonts */,
-				6B6D4E69286C5BC700C85391 /* MoviesListCell.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -487,13 +496,16 @@
 				6B6D4E4D286C3BD300C85391 /* CinemaAssets.xcassets in Resources */,
 				6B6D4E5C286C3EF600C85391 /* Poppins-Light.ttf in Resources */,
 				6B6D4DE7286C36E400C85391 /* MoviesListHeaderView.xib in Resources */,
+				6B241248286D908C00C94606 /* ActorTableViewCell.xib in Resources */,
 				6B6D4E09286C37F400C85391 /* DetailsView.xib in Resources */,
 				6B6D4E34286C384100C85391 /* MovieSheduleCell.xib in Resources */,
+				6B24124C286D946200C94606 /* FilmographyCell.xib in Resources */,
 				6B6D4E5D286C3EF600C85391 /* Poppins-SemiBold.ttf in Resources */,
 				6B6D4E6A286C5BC700C85391 /* MoviesListCell.xib in Resources */,
 				6B6D4E2B286C384100C85391 /* CalendarItemCollectionViewCell.xib in Resources */,
 				6B6D4E60286C3EF600C85391 /* Poppins-Bold.ttf in Resources */,
 				6B6D4E49286C389E00C85391 /* CardContentView.xib in Resources */,
+				6B24124A286D942100C94606 /* InfoCell.xib in Resources */,
 				6B6D4DD4286C354200C85391 /* LaunchScreen.storyboard in Resources */,
 				6B6D4E12286C381800C85391 /* Actors.storyboard in Resources */,
 				6B6D4E2A286C384100C85391 /* PhotoCell.xib in Resources */,

@@ -240,27 +240,13 @@ class MovieDetailsViewController: UIViewController {
 
 extension MovieDetailsViewController: DetailsViewDelegate {
     func detailsViewMorePhotosDidPress(_ detailsView: DetailsView) {
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: MovieDetailsViewController.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: bundle)
+        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: MovieDetailsViewController.self))
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
 
     func detailsViewActorsDidPress(_ detailsView: DetailsView) {
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: ActorListViewController.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        let viewController = PhotosViewController(nibName: "ActorListViewController", bundle: bundle)
+        let viewController = ActorListViewController(nibName: "ActorListViewController", bundle: Bundle.findBundleIfNeeded(for: ActorListViewController.self))
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }

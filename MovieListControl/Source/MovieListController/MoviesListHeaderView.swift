@@ -26,14 +26,7 @@ class MoviesListHeaderView: UIView {
     var movieItems: [MovieItem] = []
 
     static func loadFromNib() -> MoviesListHeaderView {
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: MoviesListHeaderView.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        let headerView = UINib(nibName: "MoviesListHeaderView", bundle: bundle).instantiate(withOwner: nil).first as? MoviesListHeaderView
+        let headerView = UINib(nibName: "MoviesListHeaderView", bundle: Bundle.findBundleIfNeeded(for: MoviesListHeaderView.self)).instantiate(withOwner: nil).first as? MoviesListHeaderView
         return unwrap({ headerView })
     }
 
@@ -76,14 +69,7 @@ class MoviesListHeaderView: UIView {
         moviesListHeaderCollectionView.delegate = self
         moviesListHeaderCollectionView.dataSource = self
 
-        let bundle: Bundle
-        if let podBundleURL = Bundle(for: MoviesListHeaderView.self).url(forResource: "MovieList", withExtension: "bundle"),
-           let podBundle = Bundle(url: podBundleURL) {
-            bundle = podBundle
-        } else {
-            bundle = Bundle.main
-        }
-        moviesListHeaderCollectionView.register(UINib(nibName: "MoviesListHeaderCell", bundle: bundle), forCellWithReuseIdentifier: "MoviesListHeaderCell")
+        moviesListHeaderCollectionView.register(UINib(nibName: "MoviesListHeaderCell", bundle: Bundle.findBundleIfNeeded(for: MoviesListHeaderView.self)), forCellWithReuseIdentifier: "MoviesListHeaderCell")
         scrollViewDidScroll(moviesListHeaderCollectionView)
     }
 

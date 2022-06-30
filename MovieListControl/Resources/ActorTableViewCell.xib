@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActorTableViewCell" rowHeight="80" id="hrl-i3-Eud" customClass="ActorTableViewCell" customModule="MovieList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hrl-i3-Eud" id="Qat-Gc-DXz">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9K-sU-vum" userLabel="ContainerView">
+                        <rect key="frame" x="16" y="8" width="382" height="64"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="actor1" translatesAutoresizingMaskIntoConstraints="NO" id="6fz-7i-oMp">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIv-70-9Vt">
+                                <rect key="frame" x="80" y="14" width="96" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keanu Reeves" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoU-Yw-pBb" userLabel="name">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR4-Cj-FLO" userLabel="role">
+                                        <rect key="frame" x="0.0" y="18" width="96" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zR4-Cj-FLO" secondAttribute="trailing" id="9iS-dt-Qyw"/>
+                                    <constraint firstAttribute="trailing" secondItem="EoU-Yw-pBb" secondAttribute="trailing" id="DMv-rW-yuu"/>
+                                    <constraint firstItem="EoU-Yw-pBb" firstAttribute="top" secondItem="MIv-70-9Vt" secondAttribute="top" id="Gxu-N4-7z1"/>
+                                    <constraint firstItem="zR4-Cj-FLO" firstAttribute="leading" secondItem="MIv-70-9Vt" secondAttribute="leading" id="Vmz-bW-6qA"/>
+                                    <constraint firstItem="EoU-Yw-pBb" firstAttribute="leading" secondItem="MIv-70-9Vt" secondAttribute="leading" id="l0R-Ye-dXU"/>
+                                    <constraint firstAttribute="bottom" secondItem="zR4-Cj-FLO" secondAttribute="bottom" id="mIF-Ye-txi"/>
+                                    <constraint firstItem="zR4-Cj-FLO" firstAttribute="top" secondItem="EoU-Yw-pBb" secondAttribute="bottom" id="zVT-nv-ZVE"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowRight" translatesAutoresizingMaskIntoConstraints="NO" id="8LT-oa-v03">
+                                <rect key="frame" x="348.5" y="26" width="7.5" height="12"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MIv-70-9Vt" firstAttribute="leading" secondItem="6fz-7i-oMp" secondAttribute="trailing" constant="16" id="6C5-bs-X0r"/>
+                            <constraint firstItem="8LT-oa-v03" firstAttribute="centerY" secondItem="6fz-7i-oMp" secondAttribute="centerY" id="Cyg-fO-I4x"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MIv-70-9Vt" secondAttribute="trailing" constant="16" id="Ekb-lP-Isb"/>
+                            <constraint firstItem="6fz-7i-oMp" firstAttribute="leading" secondItem="r9K-sU-vum" secondAttribute="leading" id="Guu-BB-WLj"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MIv-70-9Vt" secondAttribute="bottom" id="McC-VH-gRH"/>
+                            <constraint firstItem="6fz-7i-oMp" firstAttribute="top" secondItem="r9K-sU-vum" secondAttribute="top" id="Rr5-6Q-Nqg"/>
+                            <constraint firstItem="MIv-70-9Vt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="r9K-sU-vum" secondAttribute="top" id="WUV-qJ-SOR"/>
+                            <constraint firstAttribute="bottom" secondItem="6fz-7i-oMp" secondAttribute="bottom" id="aEQ-qZ-S8O"/>
+                            <constraint firstAttribute="trailing" secondItem="8LT-oa-v03" secondAttribute="trailing" constant="26" id="vzX-vQ-4yV"/>
+                            <constraint firstItem="MIv-70-9Vt" firstAttribute="centerY" secondItem="r9K-sU-vum" secondAttribute="centerY" id="y4U-EX-QTL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="Bg200"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="r9K-sU-vum" secondAttribute="trailing" constant="16" id="JlY-GL-ubq"/>
+                    <constraint firstItem="r9K-sU-vum" firstAttribute="top" secondItem="Qat-Gc-DXz" secondAttribute="top" constant="8" id="cod-4X-5f2"/>
+                    <constraint firstItem="r9K-sU-vum" firstAttribute="leading" secondItem="Qat-Gc-DXz" secondAttribute="leading" constant="16" id="fPP-DN-lBz"/>
+                    <constraint firstAttribute="bottom" secondItem="r9K-sU-vum" secondAttribute="bottom" constant="8" id="lx8-OF-30x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="Bg200"/>
+            <connections>
+                <outlet property="actorImageView" destination="6fz-7i-oMp" id="YbJ-Ny-LC3"/>
+                <outlet property="containerView" destination="Qat-Gc-DXz" id="s84-K0-jGy"/>
+                <outlet property="nameLabel" destination="EoU-Yw-pBb" id="iQz-2x-umh"/>
+                <outlet property="roleLabel" destination="zR4-Cj-FLO" id="Z6U-1D-Lwf"/>
+            </connections>
+            <point key="canvasLocation" x="-91" y="123"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="actor1" width="64" height="64"/>
+        <image name="arrowRight" width="7.5" height="12"/>
+        <namedColor name="Bg200">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

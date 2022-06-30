@@ -10,6 +10,7 @@ class ActorListViewController: UIViewController {
         let actors: [Actor]
     }
 
+    @IBOutlet private var contentTableView: UITableView!
     @IBOutlet private var topView: UIView!
     @IBOutlet private var backButton: StateAlphaButton!
     @IBOutlet private var barTitle: UILabel!
@@ -30,6 +31,8 @@ class ActorListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        contentTableView.register(UINib(nibName: "ActorTableViewCell", bundle: Bundle.findBundleIfNeeded(for: ActorTableViewCell.self)), forCellReuseIdentifier: "ActorTableViewCell")
 
         topView.clipsToBounds = true
         topView.layer.cornerRadius = 32
@@ -65,7 +68,7 @@ extension ActorListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ActorTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.actorTableViewCell.identifier)
+        let cell: ActorTableViewCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: "ActorTableViewCell")
         cell.setActor(actor: actorItems[indexPath.row])
         return cell
     }

@@ -33,7 +33,8 @@ class DetailsView: UIView {
     private var movieItem: MovieItem?
 
     static func loadFromNib() -> DetailsView {
-        return R.unwrap({ R.nib.detailsView(owner: nil) })
+        let detailsView = UINib(nibName: "Details", bundle: Bundle.findBundleIfNeeded(for: DetailsView.self)).instantiate(withOwner: nil).first as? DetailsView
+        return unwrap({ detailsView })
     }
 
     override func awakeFromNib() {
@@ -72,15 +73,15 @@ extension DetailsView: UICollectionViewDataSource, UICollectionViewDelegate, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case castCollectionView:
-            let cell: ActorCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.actorCell.identifier, for: indexPath)
+            let cell: ActorCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorCell", for: indexPath)
             cell.setActor(actor: movieItem?.actor[indexPath.item])
             return cell
         case trailerCollectionView:
-            let cell: TrailerCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.trailerCell.identifier, for: indexPath)
+            let cell: TrailerCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TrailerCell", for: indexPath)
             cell.setTrailer(trailer: movieItem?.trailer[indexPath.item])
             return cell
         case photoCollectionView:
-            let cell: PhotoCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.photoCell.identifier, for: indexPath)
+            let cell: PhotoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
             cell.setPhoto(photo: movieItem?.photo[indexPath.item].image)
             return cell
         default:
@@ -166,7 +167,7 @@ private extension DetailsView {
         castCollectionView.showsHorizontalScrollIndicator = false
         castCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         castCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        castCollectionView.register(R.nib.actorCell)
+        castCollectionView.register(UINib(nibName: "ActorCell", bundle: Bundle.findBundleIfNeeded(for: ActorCell.self)), forCellWithReuseIdentifier: "ActorCell")
 
         castCollectionContainerView.addSubview(castCollectionView)
 
@@ -194,7 +195,7 @@ private extension DetailsView {
         trailerCollectionView.showsHorizontalScrollIndicator = false
         trailerCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         trailerCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        trailerCollectionView.register(R.nib.trailerCell)
+        trailerCollectionView.register(UINib(nibName: "TrailerCell", bundle: Bundle.findBundleIfNeeded(for: TrailerCell.self)), forCellWithReuseIdentifier: "TrailerCell")
 
         trailerCollectionContainerView.addSubview(trailerCollectionView)
 
@@ -222,7 +223,7 @@ private extension DetailsView {
         photoCollectionView.showsHorizontalScrollIndicator = false
         photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        photoCollectionView.register(R.nib.photoCell)
+        photoCollectionView.register(UINib(nibName: "PhotoCell", bundle: Bundle.findBundleIfNeeded(for: PhotoCell.self)), forCellWithReuseIdentifier: "PhotoCell")
 
         photoCollectionContainerView.addSubview(photoCollectionView)
 

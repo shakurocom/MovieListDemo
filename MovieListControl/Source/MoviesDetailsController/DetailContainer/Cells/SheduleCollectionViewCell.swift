@@ -77,7 +77,7 @@ extension SheduleCollectionViewCell: UICollectionViewDelegate, UICollectionViewD
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: MovieSheduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.movieSheduleCell.identifier, for: indexPath)
+        let cell: MovieSheduleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieSheduleCell", for: indexPath)
         cell.isSelected = true
 
         var time: SeanceTime? = SeanceTime(time: "")
@@ -120,7 +120,7 @@ private extension SheduleCollectionViewCell {
         time1CollectionView.showsHorizontalScrollIndicator = false
         time1CollectionView.backgroundColor = UIColor.clear
         time1CollectionView.translatesAutoresizingMaskIntoConstraints = false
-        time1CollectionView.register(R.nib.movieSheduleCell)
+        time1CollectionView.register(UINib(nibName: "MovieSheduleCell", bundle: Bundle.findBundleIfNeeded(for: MovieSheduleCell.self)), forCellWithReuseIdentifier: "MovieSheduleCell")
         time1ContainerView.addSubview(time1CollectionView)
         time1CollectionView.topAnchor.constraint(equalTo: time1ContainerView.topAnchor, constant: 0).isActive = true
         time1CollectionView.bottomAnchor.constraint(equalTo: time1ContainerView.bottomAnchor, constant: 0).isActive = true
@@ -144,7 +144,7 @@ private extension SheduleCollectionViewCell {
         time2CollectionView.showsHorizontalScrollIndicator = false
         time2CollectionView.backgroundColor = UIColor.clear
         time2CollectionView.translatesAutoresizingMaskIntoConstraints = false
-        time2CollectionView.register(R.nib.movieSheduleCell)
+        time2CollectionView.register(UINib(nibName: "MovieSheduleCell", bundle: Bundle.findBundleIfNeeded(for: MovieSheduleCell.self)), forCellWithReuseIdentifier: "MovieSheduleCell")
         time2ContainerView.addSubview(time2CollectionView)
 
         time2CollectionView.topAnchor.constraint(equalTo: time2ContainerView.topAnchor, constant: 0).isActive = true

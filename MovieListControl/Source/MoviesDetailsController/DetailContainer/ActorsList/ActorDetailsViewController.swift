@@ -86,7 +86,7 @@ extension ActorDetailsViewController: UICollectionViewDataSource, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: PhotoCell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.photoCell.identifier, for: indexPath)
+        let cell: PhotoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
         cell.setPhoto(photo: actor?.photo)
         return cell
     }
@@ -114,11 +114,11 @@ extension ActorDetailsViewController: UITableViewDataSource, UITableViewDelegate
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView === infoTableView {
-            let cell: InfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.infoCell.identifier)
+            let cell: InfoCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: "InfoCell")
             cell.setInfo(info: actor.actorInfo[indexPath.row])
             return cell
         } else {
-            let cell: FilmographyCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: R.reuseIdentifier.filmographyCell.identifier)
+            let cell: FilmographyCell = tableView.dequeueReusableCell(indexPath: indexPath, reuseIdentifier: "FilmographyCell")
             cell.setFilmography(filmography: actor.filmography[indexPath.row])
             return cell
         }
@@ -174,7 +174,7 @@ private extension ActorDetailsViewController {
         photoCollectionView.showsHorizontalScrollIndicator = false
         photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "Bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        photoCollectionView.register(R.nib.photoCell)
+        photoCollectionView.register(UINib(nibName: "PhotoCell", bundle: Bundle.findBundleIfNeeded(for: PhotoCell.self)), forCellWithReuseIdentifier: "PhotoCell")
 
         photoCollectionContainerView.addSubview(photoCollectionView)
 
@@ -188,7 +188,9 @@ private extension ActorDetailsViewController {
     }
 
     private func setupUI() {
+        infoTableView.register(UINib(nibName: "InfoCell", bundle: Bundle.findBundleIfNeeded(for: InfoCell.self)), forCellReuseIdentifier: "InfoCell")
         infoTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: infoTableView.frame.size.width, height: 1))
+        filmographyTableView.register(UINib(nibName: "FilmographyCell", bundle: Bundle.findBundleIfNeeded(for: FilmographyCell.self)), forCellReuseIdentifier: "FilmographyCell")
         filmographyTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: filmographyTableView.frame.size.width, height: 1))
         infoTableView.layer.cornerRadius = 8
         filmographyTableView.layer.cornerRadius = 8
