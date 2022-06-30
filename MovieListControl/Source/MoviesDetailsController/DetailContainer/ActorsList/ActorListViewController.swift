@@ -74,7 +74,7 @@ extension ActorListViewController: UITableViewDataSource, UITableViewDelegate {
         selectedCellImageViewSnapshot = selectedCell?.actorImageView.snapshotView(afterScreenUpdates: false)
 
         let actor = actorItems[indexPath.row]
-        let viewController = ActorDetailsViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: ActorDetailsViewController.self))
+        let viewController = ActorDetailsViewController(nibName: "ActorDetailsViewController", bundle: Bundle.findBundleIfNeeded(for: ActorDetailsViewController.self))
         viewController.actor = actor
         viewController.modalPresentationStyle = .custom
         viewController.modalPresentationCapturesStatusBarAppearance = true
