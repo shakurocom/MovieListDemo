@@ -33,11 +33,11 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet private var comingSoonHeight: NSLayoutConstraint!
 
     var unhighlightedCardViewModel: MovieItem!
+    var movie: MovieItem!
+    var transition: CardTransition?
+    var fromCardContentViewMode: CardContentView.Mode = .header
 
-    private var transition: CardTransition?
     private var contentMode: ContentMode = .showtimes
-    private var fromCardContentViewMode: CardContentView.Mode = .header
-    private var movie: MovieItem!
     private var draggingDownToDismiss = false
     private var interactiveStartingPoint: CGPoint?
     private var dismissalAnimator: UIViewPropertyAnimator?
@@ -58,33 +58,6 @@ class MovieDetailsViewController: UIViewController {
         let movieItem: MovieItem
         let fromCardContentViewMode: CardContentView.Mode
         let transition: CardTransition?
-    }
-
-    static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
-        let viewController = R.unwrap({ R.storyboard.movies.movieDetailsViewController() })
-        viewController.appRouter = coordinator
-        viewController.unhighlightedCardViewModel = options.movieItem
-        viewController.movie = options.movieItem
-        viewController.transition = options.transition
-        viewController.fromCardContentViewMode = options.fromCardContentViewMode
-
-        viewController.transitioningDelegate = options.transition
-        viewController.modalPresentationCapturesStatusBarAppearance = true
-        viewController.modalPresentationStyle = .custom
-        return viewController
-
-//        let viewController = R.unwrap({ R.storyboard.movies.movieDetailsViewController() })
-//        viewController.appRouter = coordinator
-//        viewController.unhighlightedCardViewModel = options.movieItem
-//        viewController.movie = options.movieItem
-//        viewController.transition = options.transition
-//        viewController.fromCardContentViewMode = options.fromCardContentViewMode
-//
-//        let navController: BaseNavigationController = BaseNavigationController(rootViewController: viewController)
-//        navController.modalPresentationCapturesStatusBarAppearance = true
-//        navController.modalPresentationStyle = .custom
-//        navController.transitioningDelegate = options.transition
-//        return navController
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -240,14 +213,15 @@ class MovieDetailsViewController: UIViewController {
 
 extension MovieDetailsViewController: DetailsViewDelegate {
     func detailsViewMorePhotosDidPress(_ detailsView: DetailsView) {
-        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: MovieDetailsViewController.self))
-        viewController.modalPresentationStyle = .fullScreen
+        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: PhotosViewController.self))
+        viewController.modalPresentationStyle = .custom
         present(viewController, animated: true)
     }
 
     func detailsViewActorsDidPress(_ detailsView: DetailsView) {
         let viewController = ActorListViewController(nibName: "ActorListViewController", bundle: Bundle.findBundleIfNeeded(for: ActorListViewController.self))
-        viewController.modalPresentationStyle = .fullScreen
+        viewController.actorItems = movie.actor
+        viewController.modalPresentationStyle = .custom
         present(viewController, animated: true)
     }
 

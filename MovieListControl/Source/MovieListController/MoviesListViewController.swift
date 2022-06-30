@@ -27,7 +27,7 @@ class MoviesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(UINib(nibName: "MoviesListCell", bundle: Bundle.findBundleIfNeeded(for: ActorListViewController.self)), forCellWithReuseIdentifier: "MoviesListCell")
+        collectionView.register(UINib(nibName: "MoviesListCell", bundle: Bundle.findBundleIfNeeded(for: MoviesListCell.self)), forCellWithReuseIdentifier: "MoviesListCell")
         collectionView.register(MoviesListCollectionViewHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: MoviesListCollectionViewHeader.reuseIdentifier)
@@ -130,22 +130,24 @@ private extension MoviesListViewController {
 
         guard let currentCellFrame = cell.layer.presentation()?.frame,
               let cardPresentationFrameOnScreen = cell.superview?.convert(currentCellFrame, to: nil),
-              var cardFrameWithoutTransform = cell.superview?.convert(rect, to: nil),
-              let topbarViewHeight = (parent as? DemoContainerViewController)?.topbarView.frame.size.height else {
+              let cardFrameWithoutTransform = cell.superview?.convert(rect, to: nil) else {
+//              let topbarViewHeight = (parent as? DemoContainerViewController)?.topbarView.frame.size.height
             return
         }
 
-        if cardFrameWithoutTransform.origin.y < topbarViewHeight {
-            if mode == .header {
-                collectionView.setContentOffset(CGPoint(x: 0, y: Constant.topInset), animated: true)
-            } else {
-                collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
-            }
-            cardFrameWithoutTransform = CGRect(x: cardFrameWithoutTransform.origin.x,
-                                               y: topbarViewHeight,
-                                               width: cardFrameWithoutTransform.size.width,
-                                               height: cardFrameWithoutTransform.size.height)
-        }
+        /*
+         if cardFrameWithoutTransform.origin.y < topbarViewHeight {
+             if mode == .header {
+                 collectionView.setContentOffset(CGPoint(x: 0, y: Constant.topInset), animated: true)
+             } else {
+                 collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
+             }
+             cardFrameWithoutTransform = CGRect(x: cardFrameWithoutTransform.origin.x,
+                                                y: topbarViewHeight,
+                                                width: cardFrameWithoutTransform.size.width,
+                                                height: cardFrameWithoutTransform.size.height)
+         }
+         */
 
         let movieItem = movieItems[indexPath.item]
         let params = CardTransition.Params(fromCardFrame: cardPresentationFrameOnScreen,
@@ -154,14 +156,16 @@ private extension MoviesListViewController {
 
         transition = CardTransition(params: params)
 
-        _ = appRouter?.presentViewController(type: MovieDetailsViewController.self,
-                                             options: MovieDetailsViewController.Option(movieItem: movieItem,
-                                                                                        fromCardContentViewMode: mode,
-                                                                                        transition: transition),
-                                             from: self,
-                                             style: .modal(transitionStyle: .coverVertical, completion: { [weak cell] in
-                                                cell?.unfreezeAnimations()
-                                             }),
-                                             animated: true)
+        let viewController = MovieDetailsViewController(nibName: "MovieDetailsViewController", bundle: Bundle.findBundleIfNeeded(for: MovieDetailsViewController.self))
+        viewController.unhighlightedCardViewModel = movieItem
+        viewController.movie = movieItem
+        viewController.transition = transition
+        viewController.fromCardContentViewMode = mode
+        viewController.transitioningDelegate = transition
+        viewController.modalPresentationCapturesStatusBarAppearance = true
+        viewController.modalPresentationStyle = .custom
+        present(viewController, animated: true, completion: { [weak cell] in
+            cell?.unfreezeAnimations()
+         })
     }
 }

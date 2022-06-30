@@ -15,19 +15,12 @@ class ActorListViewController: UIViewController {
     @IBOutlet private var backButton: StateAlphaButton!
     @IBOutlet private var barTitle: UILabel!
 
+    var actorItems: [Actor] = []
+
     var selectedCell: ActorTableViewCell?
     var selectedCellImageViewSnapshot: UIView?
 
     private weak var transition: UIViewControllerTransitioningDelegate?
-    private var actorItems: [Actor] = []
-
-    static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
-        let viewController = R.unwrap({ R.storyboard.actors.actorListViewController() })
-        viewController.actorItems = options.actors
-        viewController.appRouter = coordinator
-        viewController.modalPresentationStyle = .custom
-        return viewController
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,11 +74,12 @@ extension ActorListViewController: UITableViewDataSource, UITableViewDelegate {
         selectedCellImageViewSnapshot = selectedCell?.actorImageView.snapshotView(afterScreenUpdates: false)
 
         let actor = actorItems[indexPath.row]
-        _ = appRouter?.presentViewController(type: ActorDetailsViewController.self,
-                                             options: ActorDetailsViewController.Option(actor: actor, transition: self),
-                                             from: self,
-                                             style: .modalDefault,
-                                             animated: true)
+        let viewController = ActorDetailsViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: ActorDetailsViewController.self))
+        viewController.actor = actor
+        viewController.modalPresentationStyle = .custom
+        viewController.modalPresentationCapturesStatusBarAppearance = true
+        viewController.transitioningDelegate = self
+        present(viewController, animated: true)
     }
 
 }

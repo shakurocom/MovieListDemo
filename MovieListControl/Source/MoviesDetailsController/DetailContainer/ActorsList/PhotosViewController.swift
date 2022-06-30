@@ -14,13 +14,6 @@ class PhotosViewController: UIViewController {
     @IBOutlet private var backButton: StateAlphaButton!
     @IBOutlet private var barTitle: UILabel!
 
-    static func instantiateViewController(_ coordinator: AppCoordinator, options: Option) -> UIViewController {
-        let viewController = R.unwrap({ R.storyboard.actors.photosViewController() })
-        viewController.appRouter = coordinator
-        viewController.modalPresentationStyle = .custom
-        return viewController
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

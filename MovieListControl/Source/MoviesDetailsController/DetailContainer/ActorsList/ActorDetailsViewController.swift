@@ -33,20 +33,9 @@ class ActorDetailsViewController: UIViewController {
     @IBOutlet private var infoTableViewHeight: NSLayoutConstraint!
     @IBOutlet private var filmographyTableViewHeight: NSLayoutConstraint!
 
+    var actor: Actor!
+
     private var photoCollectionView: UICollectionView!
-
-    private var actor: Actor!
-
-    static func instantiateViewController(_ coordinator: AppCoordinator, options: ActorDetailsViewController.Option) -> UIViewController {
-        let viewController = R.unwrap({ R.storyboard.actors.actorDetailsViewController() })
-        viewController.actor = options.actor
-        viewController.appRouter = coordinator
-        viewController.modalPresentationStyle = .custom
-        viewController.modalPresentationCapturesStatusBarAppearance = true
-        viewController.transitioningDelegate = options.transition
-
-        return viewController
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -228,11 +217,9 @@ private extension ActorDetailsViewController {
     }
 
     private func showPhotos() {
-        _ = appRouter?.presentViewController(type: PhotosViewController.self,
-                                             options: PhotosViewController.Option(),
-                                             from: self,
-                                             style: .modalDefault,
-                                             animated: true)
+        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: PhotosViewController.self))
+        viewController.modalPresentationStyle = .custom
+        present(viewController, animated: true)
     }
 
 }
