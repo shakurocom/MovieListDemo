@@ -189,7 +189,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jPI-87-ksc" secondAttribute="trailing" constant="16" id="37C-Ty-SLH"/>
                 <constraint firstAttribute="bottom" secondItem="Ja6-Qf-yTf" secondAttribute="bottom" constant="32" id="6DA-FS-RoE"/>
@@ -239,14 +239,14 @@
     </objects>
     <resources>
         <image name="arrowRight" width="7.5" height="12"/>
-        <namedColor name="Bg200">
-            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Cinema300">
             <color red="0.56470588235294117" green="0.64313725490196083" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TitleText">
             <color red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
