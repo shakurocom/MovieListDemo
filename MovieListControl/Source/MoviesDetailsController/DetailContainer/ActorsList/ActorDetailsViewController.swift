@@ -161,7 +161,7 @@ private extension ActorDetailsViewController {
         photoCollectionView.clipsToBounds = false
         photoCollectionView.showsVerticalScrollIndicator = false
         photoCollectionView.showsHorizontalScrollIndicator = false
-        photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "Bg200")
+        photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
         photoCollectionView.register(UINib(nibName: "PhotoCell", bundle: Bundle.findBundleIfNeeded(for: PhotoCell.self)), forCellWithReuseIdentifier: "PhotoCell")
 

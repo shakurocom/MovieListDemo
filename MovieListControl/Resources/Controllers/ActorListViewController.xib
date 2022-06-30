@@ -25,7 +25,7 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-RW-rfv" userLabel="Content Table View">
                     <rect key="frame" x="0.0" y="105" width="414" height="791"/>
-                    <color key="backgroundColor" name="Bg200"/>
+                    <color key="backgroundColor" name="bg200"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="B2K-wn-nak"/>
                         <outlet property="delegate" destination="-1" id="IIt-OO-hjd"/>
@@ -65,7 +65,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="KqX-bO-AWG"/>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <constraints>
                 <constraint firstItem="KqX-bO-AWG" firstAttribute="top" secondItem="1f8-N5-lwa" secondAttribute="bottom" constant="-61" id="Hru-pF-nw2"/>
                 <constraint firstItem="eVa-RW-rfv" firstAttribute="top" secondItem="1f8-N5-lwa" secondAttribute="bottom" id="UWf-3F-DbU"/>
@@ -80,8 +80,8 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="Bg200">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

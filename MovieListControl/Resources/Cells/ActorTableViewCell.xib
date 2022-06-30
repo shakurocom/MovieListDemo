@@ -69,7 +69,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="Bg200"/>
+                <color key="backgroundColor" name="bg200"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="r9K-sU-vum" secondAttribute="trailing" constant="16" id="JlY-GL-ubq"/>
                     <constraint firstItem="r9K-sU-vum" firstAttribute="top" secondItem="Qat-Gc-DXz" secondAttribute="top" constant="8" id="cod-4X-5f2"/>
@@ -77,7 +77,7 @@
                     <constraint firstAttribute="bottom" secondItem="r9K-sU-vum" secondAttribute="bottom" constant="8" id="lx8-OF-30x"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <connections>
                 <outlet property="actorImageView" destination="6fz-7i-oMp" id="YbJ-Ny-LC3"/>
                 <outlet property="containerView" destination="Qat-Gc-DXz" id="s84-K0-jGy"/>
@@ -90,8 +90,8 @@
     <resources>
         <image name="actor1" width="64" height="64"/>
         <image name="arrowRight" width="7.5" height="12"/>
-        <namedColor name="Bg200">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

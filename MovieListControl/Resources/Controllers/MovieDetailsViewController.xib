@@ -133,7 +133,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="QDc-hC-uA0"/>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <constraints>
                 <constraint firstItem="AVV-We-3Mt" firstAttribute="leading" secondItem="QDc-hC-uA0" secondAttribute="leading" id="Hkq-Gb-o11"/>
                 <constraint firstAttribute="bottom" secondItem="AVV-We-3Mt" secondAttribute="bottom" id="QXZ-n9-cBB"/>
@@ -144,9 +144,6 @@
         </view>
     </objects>
     <resources>
-        <namedColor name="Bg200">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="BlueButton">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -155,6 +152,9 @@
         </namedColor>
         <namedColor name="background100">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

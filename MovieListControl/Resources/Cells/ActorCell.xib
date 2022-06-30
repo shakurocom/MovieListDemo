@@ -65,7 +65,7 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <constraints>
                 <constraint firstItem="6zc-BO-qJT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GBt-kf-qLu"/>
                 <constraint firstAttribute="trailing" secondItem="6zc-BO-qJT" secondAttribute="trailing" id="GqQ-e0-gBb"/>
@@ -84,8 +84,8 @@
     </objects>
     <resources>
         <image name="actor1" width="64" height="64"/>
-        <namedColor name="Bg200">
-            <color red="0.96862745098039216" green="0.96862745098039216" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

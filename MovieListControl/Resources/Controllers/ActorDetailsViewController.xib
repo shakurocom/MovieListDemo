@@ -264,7 +264,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="c0F-CX-wYq"/>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <constraints>
                 <constraint firstItem="N4o-KD-ZHc" firstAttribute="leading" secondItem="eQF-DB-7ZQ" secondAttribute="leading" id="Qa0-vR-e5R"/>
                 <constraint firstItem="N4o-KD-ZHc" firstAttribute="top" secondItem="eQF-DB-7ZQ" secondAttribute="top" id="byi-0w-ynh"/>
@@ -291,6 +291,9 @@
         </namedColor>
         <namedColor name="Cinema400">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="cDark">
             <color red="0.14900000393390656" green="0.19599999487400055" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

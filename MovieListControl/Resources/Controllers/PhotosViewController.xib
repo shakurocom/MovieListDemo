@@ -297,7 +297,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="wWA-2h-Nwt"/>
-            <color key="backgroundColor" name="Bg200"/>
+            <color key="backgroundColor" name="bg200"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="S2i-Gz-n5q" secondAttribute="trailing" id="1xm-il-0JO"/>
                 <constraint firstItem="S2i-Gz-n5q" firstAttribute="leading" secondItem="4Vx-vt-895" secondAttribute="leading" id="9z1-JT-JCY"/>
@@ -327,8 +327,8 @@
         <image name="actorPhoto7" width="111" height="85"/>
         <image name="actorPhoto8" width="112" height="85"/>
         <image name="actorPhoto9" width="112" height="174"/>
-        <namedColor name="Bg200">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
