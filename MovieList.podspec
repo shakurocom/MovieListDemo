@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '13.0'
 
     s.dependency 'Shakuro.CommonTypes', '~>1.1.0'
+    s.dependency 'AFDateHelper', '~>4.3.0'
 
 end
 
