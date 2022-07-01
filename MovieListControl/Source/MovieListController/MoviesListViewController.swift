@@ -6,7 +6,7 @@ import Shakuro_CommonTypes
 import Foundation
 import UIKit
 
-class MoviesListViewController: UIViewController {
+public class MoviesListViewController: UIViewController {
 
     private enum Constant {
         static let aspectRatio: CGFloat = 298 / 164
@@ -18,11 +18,11 @@ class MoviesListViewController: UIViewController {
     private var transition: CardTransition?
     private let movieItems: [MovieItem] = MovieList.generate().items
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: "MoviesListCell", bundle: Bundle.findBundleIfNeeded(for: MoviesListCell.self)), forCellWithReuseIdentifier: "MoviesListCell")
         collectionView.register(MoviesListCollectionViewHeader.self,
@@ -30,17 +30,17 @@ class MoviesListViewController: UIViewController {
                                 withReuseIdentifier: MoviesListCollectionViewHeader.reuseIdentifier)
     }
 
-    override func viewSafeAreaInsetsDidChange() {
+    public override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
-    override func viewWillLayoutSubviews() {
+    public override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
     }
 
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let flowLayout = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)
         let width = (collectionView.bounds.width - 48) / 2
@@ -58,22 +58,22 @@ class MoviesListViewController: UIViewController {
 
 extension MoviesListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieItems.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MoviesListCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MoviesListCell", for: indexPath)
         cell.cardContentView.setupUIForMode(mode: .list)
         cell.cardContentView.setMovieItem(movieItem: movieItems[indexPath.item])
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header: MoviesListCollectionViewHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                                                      withReuseIdentifier: MoviesListCollectionViewHeader.reuseIdentifier,
                                                                                                      for: indexPath)
@@ -82,7 +82,7 @@ extension MoviesListViewController: UICollectionViewDataSource, UICollectionView
         return header
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         let indexPath = IndexPath(item: 0, section: section)
         if let headerView = self.collectionView(collectionView, viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader, at: indexPath) as? MoviesListCollectionViewHeader {
             let height = headerView.contentView.frame.height
@@ -92,7 +92,7 @@ extension MoviesListViewController: UICollectionViewDataSource, UICollectionView
         }
     }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? MoviesListCell else {
             return
         }
