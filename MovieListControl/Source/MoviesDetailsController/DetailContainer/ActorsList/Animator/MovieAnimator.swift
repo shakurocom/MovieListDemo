@@ -42,7 +42,7 @@ final class MovieAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             transitionContext.completeTransition(false)
             return
         }
-
+        toView.frame = containerView.bounds
         containerView.addSubview(toView)
 
         guard let selectedCell = firstViewController.selectedCell,
