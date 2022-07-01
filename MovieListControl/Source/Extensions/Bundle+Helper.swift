@@ -1,6 +1,5 @@
 //
 //  Bundle+Helper.swift
-//  MovieList
 //
 
 import Foundation
