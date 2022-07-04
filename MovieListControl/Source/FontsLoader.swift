@@ -33,6 +33,7 @@ public class FontsLoader {
 
     /**
      Downloads the necessary fonts for demo from the pod build.
+     Call the method in 'application(_ application:, didFinishLaunchingWithOptions launchOptions:)'.
      */
     public static func loadFonts() {
         let fonts: [(name: String, fontExtension: String)] = [
