@@ -1,0 +1,2 @@
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFDateHelper.framework
+${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shakuro_CommonTypes.framework

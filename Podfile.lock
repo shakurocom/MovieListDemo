@@ -1,0 +1,20 @@
+PODS:
+  - AFDateHelper (4.3.0)
+  - Shakuro.CommonTypes (1.1.1)
+
+DEPENDENCIES:
+  - AFDateHelper (= 4.3.0)
+  - Shakuro.CommonTypes
+
+SPEC REPOS:
+  trunk:
+    - AFDateHelper
+    - Shakuro.CommonTypes
+
+SPEC CHECKSUMS:
+  AFDateHelper: b769c07d3d4784ee9a74633285304261bb27dc52
+  Shakuro.CommonTypes: 8b15b334da1dfba894237940f890f7519d33ba3e
+
+PODFILE CHECKSUM: df4544e1627d7d7995c2b9cd58a0114b6dde94c4
+
+COCOAPODS: 1.11.3
