@@ -128,23 +128,8 @@ private extension MoviesListViewController {
         guard let currentCellFrame = cell.layer.presentation()?.frame,
               let cardPresentationFrameOnScreen = cell.superview?.convert(currentCellFrame, to: nil),
               let cardFrameWithoutTransform = cell.superview?.convert(rect, to: nil) else {
-//              let topbarViewHeight = (parent as? DemoContainerViewController)?.topbarView.frame.size.height
             return
         }
-
-        /*
-         if cardFrameWithoutTransform.origin.y < topbarViewHeight {
-             if mode == .header {
-                 collectionView.setContentOffset(CGPoint(x: 0, y: Constant.topInset), animated: true)
-             } else {
-                 collectionView.scrollToItem(at: indexPath, at: .top, animated: true)
-             }
-             cardFrameWithoutTransform = CGRect(x: cardFrameWithoutTransform.origin.x,
-                                                y: topbarViewHeight,
-                                                width: cardFrameWithoutTransform.size.width,
-                                                height: cardFrameWithoutTransform.size.height)
-         }
-         */
 
         let movieItem = movieItems[indexPath.item]
         let params = CardTransition.Params(fromCardFrame: cardPresentationFrameOnScreen,

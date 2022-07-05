@@ -1,7 +1,6 @@
 //
 //  FontsLoader.swift
 //
-//
 
 import Foundation
 import UIKit

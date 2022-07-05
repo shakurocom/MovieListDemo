@@ -1,7 +1,6 @@
 //
 //  Unwrap.swift
-//  MovieList
-
+//
 import Foundation
 
 func unwrap<T>(_ block: () -> T?) -> T {
