@@ -284,12 +284,7 @@
 		6B6D4DDE286C360800C85391 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6B6D4E55286C3DD600C85391 /* CinemaStyleSheet.swift */,
-				6B6D4E53286C3D7600C85391 /* FontsLoader.swift */,
-				6B6D4E67286C591700C85391 /* UnwrapResource.swift */,
-				6B6D4DF5286C378700C85391 /* AppStoreTransition */,
-				6B6D4E62286C43FB00C85391 /* Controls */,
-				6B6D4E4E286C3D3F00C85391 /* Extensions */,
+				6BE77306287D7412000ED5FB /* Common */,
 				6B6D4DF3286C375800C85391 /* MovieListController */,
 				6B6D4DF4286C377500C85391 /* MoviesDetailsController */,
 			);
@@ -449,6 +444,19 @@
 				6B6D4E63286C440400C85391 /* StateAlphaButton.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		6BE77306287D7412000ED5FB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6B6D4E55286C3DD600C85391 /* CinemaStyleSheet.swift */,
+				6B6D4E53286C3D7600C85391 /* FontsLoader.swift */,
+				6B6D4E67286C591700C85391 /* UnwrapResource.swift */,
+				6B6D4DF5286C378700C85391 /* AppStoreTransition */,
+				6B6D4E62286C43FB00C85391 /* Controls */,
+				6B6D4E4E286C3D3F00C85391 /* Extensions */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		EC6A5D4B9C88F7395502EB1C /* Pods */ = {
