@@ -22,12 +22,12 @@ class PhotosViewController: UIViewController {
 
         barTitle.text = NSLocalizedString("Photos", comment: "")
         barTitle.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
-        barTitle.textColor = UIColor.loadColorFromBundle(name: "cDark")
+        barTitle.textColor = MovieListBundleHelper.color(named: "cDark")
 
         let backIconConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .medium, scale: .medium)
         let backIconImage = UIImage(systemName: "arrow.left", withConfiguration: backIconConfig)
         backButton.setImage(backIconImage, for: .normal)
-        backButton.tintColor = UIColor.loadColorFromBundle(name: "accentColor")
+        backButton.tintColor = MovieListBundleHelper.color(named: "accentColor")
     }
 
     override func viewWillAppear(_ animated: Bool) {

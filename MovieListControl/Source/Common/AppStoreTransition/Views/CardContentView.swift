@@ -80,7 +80,7 @@ final class CardContentView: UIView, NibLoadable {
             imageView.layer.cornerRadius = 16
             imageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner]
             layer.cornerRadius = 0
-            backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
+            backgroundColor = MovieListBundleHelper.color(named: "bg200")
 
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 440 / 286).isActive = true
             imageViewBottomConstraint.constant = 16
@@ -108,7 +108,7 @@ final class CardContentView: UIView, NibLoadable {
             imageView.layer.cornerRadius = 32
             imageView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
             layer.cornerRadius = 0
-            backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
+            backgroundColor = MovieListBundleHelper.color(named: "bg200")
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 440 / 286).isActive = true
 
             imageViewBottomConstraint.constant = 32
@@ -126,13 +126,13 @@ final class CardContentView: UIView, NibLoadable {
     private func commonSetup() {
         imdbTitleLabel.layer.borderWidth = 1
         imdbTitleLabel.layer.cornerRadius = 4
-        imdbTitleLabel.layer.borderColor = UIColor.loadColorFromBundle(name: "subtitleText")?.cgColor
+        imdbTitleLabel.layer.borderColor = MovieListBundleHelper.color(named: "subtitleText")?.cgColor
         imdbTitleLabel.text = NSLocalizedString("IMDb", comment: "")
         imdbTitleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(12)
         imdbValueLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(12)
         imageView.clipsToBounds = true
         blurImageView.alpha = 0.6
-        closeButton.setImage(UIImage.loadImageFromBundle(name: "close"), for: .normal)
+        closeButton.setImage(MovieListBundleHelper.image(named: "close"), for: .normal)
     }
 
     private func generateShadowImage(image: UIImage?, radius: CGFloat = 16.0) -> UIImage? {

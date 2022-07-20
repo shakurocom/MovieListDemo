@@ -18,9 +18,9 @@ class ActorCell: UICollectionViewCell {
         containerView.clipsToBounds = true
 
         nameLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(14)
-        nameLabel.textColor = UIColor.loadColorFromBundle(name: "TitleText")
+        nameLabel.textColor = MovieListBundleHelper.color(named: "TitleText")
         roleLabel.font = CinemaStyleSheet.FontFace.poppinsRegular.fontWithSize(12)
-        roleLabel.textColor = UIColor.loadColorFromBundle(name: "Cinema400")
+        roleLabel.textColor = MovieListBundleHelper.color(named: "Cinema400")
     }
 
     func setActor(actor: Actor?) {

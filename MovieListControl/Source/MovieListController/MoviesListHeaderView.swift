@@ -26,7 +26,7 @@ class MoviesListHeaderView: UIView {
     var movieItems: [MovieItem] = []
 
     static func loadFromNib() -> MoviesListHeaderView {
-        let headerView = UINib(nibName: "MoviesListHeaderView", bundle: Bundle.findBundleIfNeeded(for: MoviesListHeaderView.self)).instantiate(withOwner: nil).first as? MoviesListHeaderView
+        let headerView = MovieListBundleHelper.loadNib(name: "MoviesListHeaderView").instantiate(withOwner: nil).first as? MoviesListHeaderView
         return unwrap({ headerView })
     }
 
@@ -69,7 +69,8 @@ class MoviesListHeaderView: UIView {
         moviesListHeaderCollectionView.delegate = self
         moviesListHeaderCollectionView.dataSource = self
 
-        moviesListHeaderCollectionView.register(UINib(nibName: "MoviesListHeaderCell", bundle: Bundle.findBundleIfNeeded(for: MoviesListHeaderView.self)), forCellWithReuseIdentifier: "MoviesListHeaderCell")
+        moviesListHeaderCollectionView.register(MovieListBundleHelper.loadNib(name: "MoviesListHeaderCell"),
+                                                forCellWithReuseIdentifier: "MoviesListHeaderCell")
         scrollViewDidScroll(moviesListHeaderCollectionView)
     }
 

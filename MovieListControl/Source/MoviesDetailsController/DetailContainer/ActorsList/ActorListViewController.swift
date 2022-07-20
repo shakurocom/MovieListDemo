@@ -21,7 +21,7 @@ class ActorListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        contentTableView.register(UINib(nibName: "ActorTableViewCell", bundle: Bundle.findBundleIfNeeded(for: ActorTableViewCell.self)), forCellReuseIdentifier: "ActorTableViewCell")
+        contentTableView.register(MovieListBundleHelper.loadNib(name: "ActorTableViewCell"), forCellReuseIdentifier: "ActorTableViewCell")
 
         topView.clipsToBounds = true
         topView.layer.cornerRadius = 32
@@ -29,12 +29,12 @@ class ActorListViewController: UIViewController {
 
         barTitle.text = NSLocalizedString("Cast", comment: "")
         barTitle.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
-        barTitle.textColor = UIColor.loadColorFromBundle(name: "cDark")
+        barTitle.textColor = MovieListBundleHelper.color(named: "cDark")
 
         let backIconConfig = UIImage.SymbolConfiguration(pointSize: 24, weight: .medium, scale: .medium)
         let backIconImage = UIImage(systemName: "arrow.left", withConfiguration: backIconConfig)
         backButton.setImage(backIconImage, for: .normal)
-        backButton.tintColor = UIColor.loadColorFromBundle(name: "AccentColor")
+        backButton.tintColor = MovieListBundleHelper.color(named: "AccentColor")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +70,7 @@ extension ActorListViewController: UITableViewDataSource, UITableViewDelegate {
         selectedCellImageViewSnapshot = selectedCell?.actorImageView.snapshotView(afterScreenUpdates: false)
 
         let actor = actorItems[indexPath.row]
-        let viewController = ActorDetailsViewController(nibName: "ActorDetailsViewController", bundle: Bundle.findBundleIfNeeded(for: ActorDetailsViewController.self))
+        let viewController = MovieListBundleHelper.instantiateViewController(targetClass: ActorDetailsViewController.self, nibName: "ActorDetailsViewController")
         viewController.actor = actor
         viewController.modalPresentationStyle = .custom
         viewController.modalPresentationCapturesStatusBarAppearance = true

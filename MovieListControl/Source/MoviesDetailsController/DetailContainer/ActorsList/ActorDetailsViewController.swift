@@ -156,9 +156,9 @@ private extension ActorDetailsViewController {
         photoCollectionView.clipsToBounds = false
         photoCollectionView.showsVerticalScrollIndicator = false
         photoCollectionView.showsHorizontalScrollIndicator = false
-        photoCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
+        photoCollectionView.backgroundColor = MovieListBundleHelper.color(named: "bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        photoCollectionView.register(UINib(nibName: "PhotoCell", bundle: Bundle.findBundleIfNeeded(for: PhotoCell.self)), forCellWithReuseIdentifier: "PhotoCell")
+        photoCollectionView.register(MovieListBundleHelper.loadNib(name: "PhotoCell"), forCellWithReuseIdentifier: "PhotoCell")
 
         photoCollectionContainerView.addSubview(photoCollectionView)
 
@@ -172,9 +172,11 @@ private extension ActorDetailsViewController {
     }
 
     private func setupUI() {
-        infoTableView.register(UINib(nibName: "InfoCell", bundle: Bundle.findBundleIfNeeded(for: InfoCell.self)), forCellReuseIdentifier: "InfoCell")
+        infoTableView.register(MovieListBundleHelper.loadNib(name: "InfoCell"),
+                               forCellReuseIdentifier: "InfoCell")
         infoTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: infoTableView.frame.size.width, height: 1))
-        filmographyTableView.register(UINib(nibName: "FilmographyCell", bundle: Bundle.findBundleIfNeeded(for: FilmographyCell.self)), forCellReuseIdentifier: "FilmographyCell")
+        filmographyTableView.register(MovieListBundleHelper.loadNib(name: "FilmographyCell"),
+                                      forCellReuseIdentifier: "FilmographyCell")
         filmographyTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: filmographyTableView.frame.size.width, height: 1))
         infoTableView.layer.cornerRadius = 8
         filmographyTableView.layer.cornerRadius = 8
@@ -212,7 +214,7 @@ private extension ActorDetailsViewController {
     }
 
     private func showPhotos() {
-        let viewController = PhotosViewController(nibName: "PhotosViewController", bundle: Bundle.findBundleIfNeeded(for: PhotosViewController.self))
+        let viewController = MovieListBundleHelper.instantiateViewController(targetClass: PhotosViewController.self, nibName: "PhotosViewController")
         viewController.modalPresentationStyle = .custom
         present(viewController, animated: true)
     }

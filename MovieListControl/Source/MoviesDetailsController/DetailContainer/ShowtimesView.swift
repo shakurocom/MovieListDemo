@@ -31,14 +31,14 @@ class ShowtimesView: UIView {
     private var dates: [Day] = []
 
     static func loadFromNib() -> ShowtimesView {
-        let showtimesView = UINib(nibName: "ShowtimesView", bundle: Bundle.findBundleIfNeeded(for: ShowtimesView.self)).instantiate(withOwner: nil).first as? ShowtimesView
+        let showtimesView = MovieListBundleHelper.loadNib(name: "ShowtimesView").instantiate(withOwner: nil).first as? ShowtimesView
         return unwrap({ showtimesView })
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
+        backgroundColor = MovieListBundleHelper.color(named: "bg200")
 
         addCalendarCollectionView()
         addSheduleCollectionView()
@@ -57,7 +57,7 @@ class ShowtimesView: UIView {
         dateLabel.text = NSLocalizedString("Date", comment: "")
         dateLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(18)
 
-        sheduleContainerView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
+        sheduleContainerView.backgroundColor = MovieListBundleHelper.color(named: "bg200")
         calendarContainerView.clipsToBounds = true
     }
 
@@ -170,7 +170,7 @@ private extension ShowtimesView {
         calendarCollectionView.backgroundColor = UIColor.clear
         calendarCollectionView.translatesAutoresizingMaskIntoConstraints = false
 
-        calendarCollectionView.register(UINib(nibName: "CalendarItemCollectionViewCell", bundle: Bundle.findBundleIfNeeded(for: ShowtimesView.self)), forCellWithReuseIdentifier: "CalendarItemCollectionViewCell")
+        calendarCollectionView.register(MovieListBundleHelper.loadNib(name: "CalendarItemCollectionViewCell"), forCellWithReuseIdentifier: "CalendarItemCollectionViewCell")
 
         calendarContainerView.addSubview(calendarCollectionView)
 
@@ -201,11 +201,11 @@ private extension ShowtimesView {
         sheduleCollectionView.clipsToBounds = false
         sheduleCollectionView.showsVerticalScrollIndicator = false
         sheduleCollectionView.showsHorizontalScrollIndicator = false
-        sheduleCollectionView.backgroundColor = UIColor.loadColorFromBundle(name: "bg200")
+        sheduleCollectionView.backgroundColor = MovieListBundleHelper.color(named: "bg200")
         sheduleCollectionView.translatesAutoresizingMaskIntoConstraints = false
 
-        sheduleCollectionView.register(UINib(nibName: "SheduleCollectionViewCell", bundle: Bundle.findBundleIfNeeded(for: SheduleCollectionViewCell.self)),
-                                        forCellWithReuseIdentifier: "SheduleCollectionViewCell")
+        sheduleCollectionView.register(MovieListBundleHelper.loadNib(name: "SheduleCollectionViewCell"),
+                                       forCellWithReuseIdentifier: "SheduleCollectionViewCell")
 
         sheduleContainerView.addSubview(sheduleCollectionView)
 

@@ -10,8 +10,7 @@ protocol NibLoadable where Self: UIView {
 extension NibLoadable {
     @discardableResult
     func fromNib() -> UIView? {
-        let bundle = Bundle.findBundleIfNeeded(for: type(of: self))
-        guard let contentView = bundle.loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? UIView else {
+        guard let contentView = MovieListBundleHelper.loadNib(name: String(describing: type(of: self))).instantiate(withOwner: self, options: nil).first as? UIView else {
             return nil
         }
         self.addSubview(contentView)
