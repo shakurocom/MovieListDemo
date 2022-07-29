@@ -4,9 +4,13 @@
 
 import UIKit
 
+/**
+ Helper that provides access to the bundle in which resources are stored.
+ */
 public class BundleHelper {
 
-    private let bundle: Bundle
+    /// Returns the Bundle object.
+    public let bundle: Bundle
 
     /// Instantiates bundle for the specified class and bundle name.
     /// - parameter targetClass: The class with which the bundle is associated.
@@ -22,6 +26,13 @@ public class BundleHelper {
     }
 
     // MARK: - Public
+
+    /// Returns the file URL for the resource identified by the specified name and file extension.
+    /// - parameter name: The name of the resource file.
+    /// - parameter extension: The extension of the resource file.
+    public func url(forResource name: String, withExtension ext: String?) -> URL? {
+        return bundle.url(forResource: name, withExtension: ext)
+    }
 
     /// Returns an image object using the named image asset that is compatible with the specified trait collection.
     /// - parameter named: The name of the image asset or file.

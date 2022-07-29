@@ -495,7 +495,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		31B788745B3B1F73BAE6EEEDBC9CDE5E /* Debug */ = {
+		16B06C76E43C9DE9BDF48DD7E3DDB407 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 077A23FEA663CD5084D5670C06F36F78 /* Shakuro.CommonTypes.debug.xcconfig */;
 			buildSettings = {
@@ -523,12 +523,48 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.5;
+				SWIFT_VERSION = 5.6;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		49292697B02F4182BF81B57F0B2F87CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0AE44AC8FAFED5CF96BFCBFD9CF0E08 /* Shakuro.CommonTypes.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Shakuro.CommonTypes/Shakuro.CommonTypes-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Shakuro.CommonTypes/Shakuro.CommonTypes-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Shakuro.CommonTypes/Shakuro.CommonTypes.modulemap";
+				PRODUCT_MODULE_NAME = Shakuro_CommonTypes;
+				PRODUCT_NAME = Shakuro_CommonTypes;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -800,42 +836,6 @@
 			};
 			name = Release;
 		};
-		FE4F42332EB53155DEE29E312E0A35D7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0AE44AC8FAFED5CF96BFCBFD9CF0E08 /* Shakuro.CommonTypes.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Shakuro.CommonTypes/Shakuro.CommonTypes-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Shakuro.CommonTypes/Shakuro.CommonTypes-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Shakuro.CommonTypes/Shakuro.CommonTypes.modulemap";
-				PRODUCT_MODULE_NAME = Shakuro_CommonTypes;
-				PRODUCT_NAME = Shakuro_CommonTypes;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -869,8 +869,8 @@
 		E6D1E22F1262C30652C9DFC7A11D3EA0 /* Build configuration list for PBXNativeTarget "Shakuro.CommonTypes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				31B788745B3B1F73BAE6EEEDBC9CDE5E /* Debug */,
-				FE4F42332EB53155DEE29E312E0A35D7 /* Release */,
+				16B06C76E43C9DE9BDF48DD7E3DDB407 /* Debug */,
+				49292697B02F4182BF81B57F0B2F87CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
