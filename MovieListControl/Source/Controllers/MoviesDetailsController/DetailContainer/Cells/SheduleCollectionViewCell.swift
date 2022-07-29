@@ -120,7 +120,7 @@ private extension SheduleCollectionViewCell {
         time1CollectionView.showsHorizontalScrollIndicator = false
         time1CollectionView.backgroundColor = UIColor.clear
         time1CollectionView.translatesAutoresizingMaskIntoConstraints = false
-        time1CollectionView.register(MovieListBundleHelper.loadNib(name: "MovieSheduleCell"),
+        time1CollectionView.register(Bundle.movieListBundleHelper.loadNib(name: "MovieSheduleCell"),
                                      forCellWithReuseIdentifier: "MovieSheduleCell")
         time1ContainerView.addSubview(time1CollectionView)
         time1CollectionView.topAnchor.constraint(equalTo: time1ContainerView.topAnchor, constant: 0).isActive = true
@@ -145,7 +145,7 @@ private extension SheduleCollectionViewCell {
         time2CollectionView.showsHorizontalScrollIndicator = false
         time2CollectionView.backgroundColor = UIColor.clear
         time2CollectionView.translatesAutoresizingMaskIntoConstraints = false
-        time2CollectionView.register(MovieListBundleHelper.loadNib(name: "MovieSheduleCell"),
+        time2CollectionView.register(Bundle.movieListBundleHelper.loadNib(name: "MovieSheduleCell"),
                                      forCellWithReuseIdentifier: "MovieSheduleCell")
         time2ContainerView.addSubview(time2CollectionView)
 

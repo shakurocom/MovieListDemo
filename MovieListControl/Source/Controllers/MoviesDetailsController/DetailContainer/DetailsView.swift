@@ -33,7 +33,7 @@ class DetailsView: UIView {
     private var movieItem: MovieItem?
 
     static func loadFromNib() -> DetailsView {
-        let detailsView = MovieListBundleHelper.loadNib(name: "DetailsView").instantiate(withOwner: nil).first as? DetailsView
+        let detailsView = Bundle.movieListBundleHelper.loadNib(name: "DetailsView").instantiate(withOwner: nil).first as? DetailsView
         return unwrap({ detailsView })
     }
 
@@ -165,9 +165,9 @@ private extension DetailsView {
         castCollectionView.clipsToBounds = false
         castCollectionView.showsVerticalScrollIndicator = false
         castCollectionView.showsHorizontalScrollIndicator = false
-        castCollectionView.backgroundColor = MovieListBundleHelper.color(named: "bg200")
+        castCollectionView.backgroundColor = Bundle.movieListBundleHelper.color(named: "bg200")
         castCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        castCollectionView.register(MovieListBundleHelper.loadNib(name: "ActorCell"),
+        castCollectionView.register(Bundle.movieListBundleHelper.loadNib(name: "ActorCell"),
                                     forCellWithReuseIdentifier: "ActorCell")
 
         castCollectionContainerView.addSubview(castCollectionView)
@@ -194,9 +194,9 @@ private extension DetailsView {
         trailerCollectionView.clipsToBounds = false
         trailerCollectionView.showsVerticalScrollIndicator = false
         trailerCollectionView.showsHorizontalScrollIndicator = false
-        trailerCollectionView.backgroundColor = MovieListBundleHelper.color(named: "bg200")
+        trailerCollectionView.backgroundColor = Bundle.movieListBundleHelper.color(named: "bg200")
         trailerCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        trailerCollectionView.register(MovieListBundleHelper.loadNib(name: "TrailerCell"),
+        trailerCollectionView.register(Bundle.movieListBundleHelper.loadNib(name: "TrailerCell"),
                                        forCellWithReuseIdentifier: "TrailerCell")
 
         trailerCollectionContainerView.addSubview(trailerCollectionView)
@@ -223,9 +223,9 @@ private extension DetailsView {
         photoCollectionView.clipsToBounds = false
         photoCollectionView.showsVerticalScrollIndicator = false
         photoCollectionView.showsHorizontalScrollIndicator = false
-        photoCollectionView.backgroundColor = MovieListBundleHelper.color(named: "bg200")
+        photoCollectionView.backgroundColor = Bundle.movieListBundleHelper.color(named: "bg200")
         photoCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        photoCollectionView.register(MovieListBundleHelper.loadNib(name: "PhotoCell"),
+        photoCollectionView.register(Bundle.movieListBundleHelper.loadNib(name: "PhotoCell"),
                                      forCellWithReuseIdentifier: "PhotoCell")
 
         photoCollectionContainerView.addSubview(photoCollectionView)

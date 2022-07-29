@@ -9,7 +9,7 @@ public enum CinemaStyleSheet {
     // MARK: - Colors
 
     enum Color {
-        static let sheduleButtonBackground: UIColor = MovieListBundleHelper.color(named: "BlueButton") ?? .clear
+        static let sheduleButtonBackground: UIColor = Bundle.movieListBundleHelper.color(named: "BlueButton") ?? .clear
     }
 
     // MARK: - Fonts

@@ -8,14 +8,14 @@ class CalendarItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var weekTitle: UILabel!
     @IBOutlet private var dayTitle: UILabel!
 
-    var selectedTintColor: UIColor? = MovieListBundleHelper.color(named: "blueButton")
+    var selectedTintColor: UIColor? = Bundle.movieListBundleHelper.color(named: "blueButton")
     var normalTintColor: UIColor? = UIColor.white
 
     override var isSelected: Bool {
         didSet {
             if let selectedTint = selectedTintColor, let normalTint = normalTintColor {
-                weekTitle.textColor = isSelected ? .white : MovieListBundleHelper.color(named: "c600")
-                dayTitle.textColor = isSelected ? .white : MovieListBundleHelper.color(named: "c600")
+                weekTitle.textColor = isSelected ? .white : Bundle.movieListBundleHelper.color(named: "c600")
+                dayTitle.textColor = isSelected ? .white : Bundle.movieListBundleHelper.color(named: "c600")
                 backgroundColor = isSelected ? selectedTint : normalTint
             }
         }

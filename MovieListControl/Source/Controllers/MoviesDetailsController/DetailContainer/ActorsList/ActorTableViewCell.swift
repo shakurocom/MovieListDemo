@@ -1,13 +1,13 @@
 //
-//  ActorCell.swift
+//  ActorTableViewCell.swift
 //  ShakuroApp
 
 import UIKit
 
-class ActorCell: UICollectionViewCell {
+class ActorTableViewCell: UITableViewCell {
 
     @IBOutlet private var containerView: UIView!
-    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private (set) var actorImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
     @IBOutlet private var roleLabel: UILabel!
 
@@ -18,13 +18,13 @@ class ActorCell: UICollectionViewCell {
         containerView.clipsToBounds = true
 
         nameLabel.font = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(14)
-        nameLabel.textColor = MovieListBundleHelper.color(named: "TitleText")
+        nameLabel.textColor = Bundle.movieListBundleHelper.color(named: "titleText")
         roleLabel.font = CinemaStyleSheet.FontFace.poppinsRegular.fontWithSize(12)
-        roleLabel.textColor = MovieListBundleHelper.color(named: "Cinema400")
+        roleLabel.textColor = Bundle.movieListBundleHelper.color(named: "cinema400")
     }
 
     func setActor(actor: Actor?) {
-        imageView.image = actor?.photo
+        actorImageView.image = actor?.photo
         nameLabel.text = actor?.name
         roleLabel.text = actor?.role
     }

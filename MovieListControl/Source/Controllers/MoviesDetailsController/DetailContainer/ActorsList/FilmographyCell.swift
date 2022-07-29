@@ -13,9 +13,9 @@ class FilmographyCell: UITableViewCell {
         super.awakeFromNib()
 
         titleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(12)
-        titleLabel.textColor = MovieListBundleHelper.color(named: "cDark")
+        titleLabel.textColor = Bundle.movieListBundleHelper.color(named: "cDark")
         subtitleLabel.font = CinemaStyleSheet.FontFace.poppinsMedium.fontWithSize(14)
-        subtitleLabel.textColor = MovieListBundleHelper.color(named: "cDark")
+        subtitleLabel.textColor = Bundle.movieListBundleHelper.color(named: "cDark")
     }
 
     func setFilmography(filmography: Filmography?) {

@@ -24,7 +24,7 @@ public class MoviesListViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(MovieListBundleHelper.loadNib(name: "MoviesListCell"),
+        collectionView.register(Bundle.movieListBundleHelper.loadNib(name: "MoviesListCell"),
                                 forCellWithReuseIdentifier: "MoviesListCell")
         collectionView.register(MoviesListCollectionViewHeader.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -139,7 +139,7 @@ private extension MoviesListViewController {
 
         transition = CardTransition(params: params)
 
-        let viewController = MovieListBundleHelper.instantiateViewController(targetClass: MovieDetailsViewController.self, nibName: "MovieDetailsViewController")
+        let viewController = Bundle.movieListBundleHelper.instantiateViewController(targetClass: MovieDetailsViewController.self, nibName: "MovieDetailsViewController")
         viewController.unhighlightedCardViewModel = movieItem
         viewController.movie = movieItem
         viewController.transition = transition

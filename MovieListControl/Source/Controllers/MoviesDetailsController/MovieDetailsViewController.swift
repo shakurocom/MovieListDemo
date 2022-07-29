@@ -206,14 +206,15 @@ class MovieDetailsViewController: UIViewController {
 }
 
 extension MovieDetailsViewController: DetailsViewDelegate {
+
     func detailsViewMorePhotosDidPress(_ detailsView: DetailsView) {
-        let viewController = MovieListBundleHelper.instantiateViewController(targetClass: PhotosViewController.self, nibName: "PhotosViewController")
+        let viewController = Bundle.movieListBundleHelper.instantiateViewController(targetClass: PhotosViewController.self, nibName: "PhotosViewController")
         viewController.modalPresentationStyle = .custom
         present(viewController, animated: true)
     }
 
     func detailsViewActorsDidPress(_ detailsView: DetailsView) {
-        let viewController = MovieListBundleHelper.instantiateViewController(targetClass: ActorListViewController.self, nibName: "ActorListViewController")
+        let viewController = Bundle.movieListBundleHelper.instantiateViewController(targetClass: ActorListViewController.self, nibName: "ActorListViewController")
         viewController.actorItems = movie.actor
         viewController.modalPresentationStyle = .custom
         present(viewController, animated: true)
@@ -275,8 +276,8 @@ private extension MovieDetailsViewController {
         buttonContainer.layer.cornerRadius = 8
 
         let selectedTint = UIColor.white
-        let normalTint = MovieListBundleHelper.color(named: "cinemaText500")
-        let selectedBackground = MovieListBundleHelper.color(named: "BlueButton")
+        let normalTint = Bundle.movieListBundleHelper.color(named: "cinemaText500")
+        let selectedBackground = Bundle.movieListBundleHelper.color(named: "BlueButton")
         let normalBackground = UIColor.white
 
         let buttonFont = CinemaStyleSheet.FontFace.poppinsSemiBold.fontWithSize(16)
