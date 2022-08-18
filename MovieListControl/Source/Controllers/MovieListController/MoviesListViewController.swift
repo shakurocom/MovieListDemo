@@ -13,6 +13,10 @@ public class MoviesListViewController: UIViewController {
         static let topInset: CGFloat = 121
     }
 
+    public static func loadFromNib() -> MoviesListViewController {
+        return Bundle.movieListBundleHelper.instantiateViewController(targetClass: MoviesListViewController.self, nibName: "MoviesListViewController")
+    }
+
     @IBOutlet private var collectionView: UICollectionView!
 
     private var transition: CardTransition?
