@@ -8,7 +8,7 @@ class CalendarItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var weekTitle: UILabel!
     @IBOutlet private var dayTitle: UILabel!
 
-    var selectedTintColor: UIColor? = Bundle.movieListBundleHelper.color(named: "blueButton")
+    var selectedTintColor: UIColor? = Bundle.movieListBundleHelper.color(named: "BlueButton")
     var normalTintColor: UIColor? = UIColor.white
 
     override var isSelected: Bool {
