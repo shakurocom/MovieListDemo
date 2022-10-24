@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActorListViewController" customModule="MovieList" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="eVG-6A-AfU" id="dNY-E2-PnB"/>
+                <outlet property="barTitle" destination="qL2-Xn-QbN" id="XYe-Kl-Vw7"/>
+                <outlet property="contentTableView" destination="eVa-RW-rfv" id="Fuv-sK-VDO"/>
+                <outlet property="topView" destination="1f8-N5-lwa" id="leb-gc-kRp"/>
+                <outlet property="view" destination="7gn-Fq-y85" id="vHa-I5-Bdj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="7gn-Fq-y85">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-RW-rfv" userLabel="Content Table View">
+                    <rect key="frame" x="0.0" y="105" width="414" height="791"/>
+                    <color key="backgroundColor" name="bg200"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="B2K-wn-nak"/>
+                        <outlet property="delegate" destination="-1" id="IIt-OO-hjd"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1f8-N5-lwa" userLabel="TopView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qL2-Xn-QbN" userLabel="Bar Title">
+                            <rect key="frame" x="16" y="67.5" width="382" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVG-6A-AfU" userLabel="Back Button" customClass="StateAlphaButton" customModule="MovieList" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="51" width="88" height="54"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="54" id="7uq-bS-Kty"/>
+                                <constraint firstAttribute="width" constant="88" id="tzX-SE-4Gl"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="F9x-dU-NrE"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qL2-Xn-QbN" secondAttribute="trailing" constant="16" id="FHY-ME-fQI"/>
+                        <constraint firstItem="qL2-Xn-QbN" firstAttribute="centerX" secondItem="1f8-N5-lwa" secondAttribute="centerX" id="GpI-3t-iYO"/>
+                        <constraint firstItem="eVG-6A-AfU" firstAttribute="leading" secondItem="1f8-N5-lwa" secondAttribute="leading" id="OdI-jj-7pA"/>
+                        <constraint firstAttribute="bottom" secondItem="eVG-6A-AfU" secondAttribute="bottom" id="fUe-Tb-xu0"/>
+                        <constraint firstItem="qL2-Xn-QbN" firstAttribute="centerY" secondItem="eVG-6A-AfU" secondAttribute="centerY" id="jTz-kh-90c"/>
+                        <constraint firstItem="qL2-Xn-QbN" firstAttribute="leading" secondItem="1f8-N5-lwa" secondAttribute="leading" constant="16" id="roA-k9-WvA"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="KqX-bO-AWG"/>
+            <color key="backgroundColor" name="bg200"/>
+            <constraints>
+                <constraint firstItem="KqX-bO-AWG" firstAttribute="top" secondItem="1f8-N5-lwa" secondAttribute="bottom" constant="-61" id="Hru-pF-nw2"/>
+                <constraint firstItem="eVa-RW-rfv" firstAttribute="top" secondItem="1f8-N5-lwa" secondAttribute="bottom" id="UWf-3F-DbU"/>
+                <constraint firstItem="1f8-N5-lwa" firstAttribute="top" secondItem="7gn-Fq-y85" secondAttribute="top" id="W3V-CE-fXe"/>
+                <constraint firstItem="eVa-RW-rfv" firstAttribute="bottom" secondItem="7gn-Fq-y85" secondAttribute="bottom" id="X93-u9-Fer"/>
+                <constraint firstAttribute="trailing" secondItem="1f8-N5-lwa" secondAttribute="trailing" id="acZ-nj-6we"/>
+                <constraint firstItem="1f8-N5-lwa" firstAttribute="leading" secondItem="7gn-Fq-y85" secondAttribute="leading" id="hpn-pW-oxA"/>
+                <constraint firstItem="eVa-RW-rfv" firstAttribute="leading" secondItem="KqX-bO-AWG" secondAttribute="leading" id="p4n-A3-dcE"/>
+                <constraint firstItem="KqX-bO-AWG" firstAttribute="trailing" secondItem="eVa-RW-rfv" secondAttribute="trailing" id="za1-CX-xR5"/>
+            </constraints>
+            <point key="canvasLocation" x="-158" y="81"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="bg200">
+            <color red="0.96899998188018799" green="0.96899998188018799" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
