@@ -12,6 +12,8 @@ MovieList is a Swift component that features a carousel animation suitable for s
 
 MovieList allows the user to swipe through available movies or events, where the animation highlights the selected film by enlarging the preview.
 
+![](Resources/event-info.gif)
+
 Here is an example showing the movies carousel:
 
 ![](Resources/scrollingItems.gif)
